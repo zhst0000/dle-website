@@ -1,70 +1,367 @@
-<!doctype html>
-<html>
-  <head>
-    <!-- Page setup -->
-    <meta charset="utf-8">
-    <title>Your title here</title>
-    <meta name="description" content="A brief description of your site for search engines">
-    <meta name="author" content="Information about the author here">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="icon" type="image/png" href="favicon.png">
-  
-    <!-- Stylesheets -->
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    
-  </head>
-  
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Resources</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
 
-    <header id="header">
-      <img src="logo.png">
-      <h1>Simple Website</h1>
-      
-      <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>                 
-    </header>
-   
-    <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="home" class="content-region hide">
-            <h2>Articles</h2>
-            <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
-            </p>
-          </div>
-          
-          <div id="about" class="content-region hide">
-            <h2>About</h2>
-            <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
-            </p>
-          </div>
-          
-          <div id="contact" class="content-region hide">
-            <h2>Contact</h2>
-            <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
-            </p>
-          </div>
-          
-        </div>
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #333;
+      font-size: 2.5rem;
+    }
+
+    /* Navigation Styling */
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 400px;
+  margin-top: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.carousel-nav button {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-nav button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+    /* Main Content Styling */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-bar input {
+      width: 50%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      width: 22%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .category h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .category p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .article {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .article h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .article p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Newsletter Section Styling */
+    .newsletter {
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .newsletter input {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      width: 70%;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #ffffff;
+      color: #007bff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: #777;
+    }
+  </style>
+</head>
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  // Optional: Auto-play
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }, 5000);
+
+  // Initial show
+  showSlide(currentIndex);
+</script>
+<body>
+
+  
+  <header>
+    <h1>Puzzle Bus</h1>
+    
+    <nav>
+      <a href="#">Page1</a>
+      <a href="#">Page2</a>
+      <a href="#">Page3</a>
+      <a href="#">Page4</a>
+    </nav>
+
+    /*<!-- Carousel -->*/
+    <div class="carousel">
+  <div class="carousel-track">
+    <div class="carousel-slide active">
+      <img src="https://www.google.com/imgres?q=stock%20image&imgurl=https%3A%2F%2Fstatic-cse.canva.com%2Fblob%2F1218655%2Ffeature_StockImages_lead_032x.jpg&imgrefurl=https%3A%2F%2Fwww.canva.com%2Ffeatures%2Ffree-stock-photos%2F&docid=oLnxzwTBkJTEIM&tbnid=liKsy7YMQQvM7M&vet=12ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA..i&w=2520&h=1680&hcb=2&ved=2ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA" alt="Slide 1">
+      <div class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.google.com/imgres?q=stock%20image&imgurl=https%3A%2F%2Fstatic-cse.canva.com%2Fblob%2F1218655%2Ffeature_StockImages_lead_032x.jpg&imgrefurl=https%3A%2F%2Fwww.canva.com%2Ffeatures%2Ffree-stock-photos%2F&docid=oLnxzwTBkJTEIM&tbnid=liKsy7YMQQvM7M&vet=12ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA..i&w=2520&h=1680&hcb=2&ved=2ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA" alt="Slide 2">
+      <div class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.google.com/imgres?q=stock%20image&imgurl=https%3A%2F%2Fstatic-cse.canva.com%2Fblob%2F1218655%2Ffeature_StockImages_lead_032x.jpg&imgrefurl=https%3A%2F%2Fwww.canva.com%2Ffeatures%2Ffree-stock-photos%2F&docid=oLnxzwTBkJTEIM&tbnid=liKsy7YMQQvM7M&vet=12ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA..i&w=2520&h=1680&hcb=2&ved=2ahUKEwiUipPOo9GMAxV9IjQIHRmqGgcQM3oECD0QAA" alt="Slide 3">
+      <div class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</div>
+  </header>
+
+  <div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search articles...">
+      <button>Search</button>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+      <div class="category">
+        <h2>Title1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </div>
+      <div class="category">
+        <h2>Title2</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="category">
+        <h2>Title3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </div>
+      <div class="category">
+        <h2>Title4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
     </div>
 
-    <footer>  
-      Footer region
-    </footer>
-    
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
-    
-  </body>
-</html>
+    <!-- Articles -->
+    <div class="articles">
+      <div class="article">
+        <h3>Article1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+      </div>
+      <div class="article">
+        <h3>Article2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="article">
+        <h3>Article3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+
+ 
