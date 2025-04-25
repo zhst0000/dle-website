@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    #chartContainer {
+      width: 500px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Rubric</h2>
+  <div id="chartContainer">
+    <canvas id="reviewRadarChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('reviewRadarChart').getContext('2d');
+    const reviewRadarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Theme', 'Gameplay and Mechanics', 'Accessibility', 'Engineering', 'Replayability'],
+        datasets: [{
+          label: 'User Review',
+          data: [4, 5, 3, 4, 4],
+          fill: true,
+          backgroundColor: 'rgba(0, 132, 61, 0.2)',
+          borderColor: 'rgba(0, 132, 61, 1)',
+          pointBackgroundColor: 'rgba(0, 132, 61, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(0, 132, 61, 1)'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            min: 0,
+            max: 5,
+            ticks: {
+              stepSize: 1,
+              backdropColor: 'transparent'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: true
+          },
+          tooltip: {
+            enabled: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
