@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connections Logo with Letter P</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 240px;
+      height: 190px;
+    }
+
+    .line {
+      width: 240px;
+      height: 35px;
+      border-radius: 35px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .line1 { background-color: #ffeb3b; }   /* Yellow */
+    .line2 { background-color: #03a9f4; }   /* Blue */
+    .line3 { background-color: #8bc34a; }   /* Green (shared with P) */
+    .line4 { background-color: #e91e63; }   /* Pink/Red */
+
+    /* Vertical spine of the "P" */
+    .vert {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 35px;
+      height: 140px;
+      background-color: #8bc34a;
+      border-radius: 10px;
+      z-index: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <div class="vert"></div>
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+  </div>
+</body>
+</html>
