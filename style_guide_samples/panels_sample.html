@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colored Panels Demo</title>
+  <style>
+    :root {
+      /* Spacing */
+      --space-s: 8px;
+      --space-m: 16px;
+      --space-l: 24px;
+      /* Radius & Shadow */
+      --radius: 12px;
+      --shadow-light: 0 1px 4px rgba(0,0,0,0.08);
+      --shadow-strong: 0 4px 16px rgba(0,0,0,0.15);
+      /* Colors */
+      --color-red:     #E32017;
+      --red-rgb:       227, 32, 23;
+      --color-blue:    #00A0E2;
+      --blue-rgb:      0, 160, 226;
+      --color-green:   #00782A;
+      --green-rgb:     0, 120, 42;
+      --color-yellow:  #FFD300;
+      --yellow-rgb:    255, 211, 0;
+      --color-brown:   #B36305;
+      --brown-rgb:     179, 99, 5;
+      /* Panel defaults */
+      --panel-bg:       #FFFFFF;
+      --panel-border:   #E0E0E0;
+      --panel-hover-bg: rgba(0,0,0,0.02);
+      --text-color:     #2E2E2E;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #F5F5F5;
+      margin: 0;
+      padding: var(--space-l);
+      color: var(--text-color);
+    }
+
+    .panel {
+      position: relative;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      overflow: hidden;
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-bottom: var(--space-l);
+    }
+    .panel:hover {
+      background: var(--panel-hover-bg);
+      box-shadow: var(--shadow-strong);
+    }
+
+    /* Colored panels */
+    .panel--red {
+      border-left: 6px solid var(--color-red);
+      background: rgba(var(--red-rgb), 0.1);
+    }
+    .panel--blue {
+      border-left: 6px solid var(--color-blue);
+      background: rgba(var(--blue-rgb), 0.1);
+    }
+    .panel--green {
+      border-left: 6px solid var(--color-green);
+      background: rgba(var(--green-rgb), 0.1);
+    }
+    .panel--yellow {
+      border-left: 6px solid var(--color-yellow);
+      background: rgba(var(--yellow-rgb), 0.1);
+    }
+    .panel--brown {
+      border-left: 6px solid var(--color-brown);
+      background: rgba(var(--brown-rgb), 0.1);
+    }
+
+    .panel__header,
+    .panel__body,
+    .panel__footer {
+      padding: var(--space-m);
+    }
+    .panel__header {
+      border-bottom: 1px solid var(--panel-border);
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+    }
+    .panel__title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .panel__body p {
+      margin: var(--space-s) 0;
+      color: #555;
+    }
+    .panel__footer {
+      border-top: 1px solid var(--panel-border);
+      text-align: right;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: var(--space-s) var(--space-m);
+      border: none;
+      border-radius: 4px;
+      background: var(--text-color);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Article 1 -->
+  <article class="panel panel--red">
+    <header class="panel__header">
+      <h3 class="panel__title">Article 1</h3>
+    </header>
+    <div class="panel__body">
+      <p>DLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac finibus magna. Aenean cursus sagittis nisi, id viverra elit bibendum id. Duis convallis dui diam, ut condimentum nisl cursus non. In laoreet vitae justo sed ultricies. Donec cursus et leo ut commodo. Morbi lacinia non elit id vestibulum. Maecenas lacus velit, dictum eget dolor ac, gravida lobortis lectus. Nam molestie accumsan nisi, ac dapibus dolor malesuada et. </p>
+    </div>
+    <footer class="panel__footer">
+      <button class="btn">Read Full Article</button>
+    </footer>
+  </article>
+
+  <!-- Article 2 -->
+  <article class="panel panel--blue">
+    <header class="panel__header">
+      <h3 class="panel__title">Article 2</h3>
+    </header>
+    <div class="panel__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac finibus magna. Aenean cursus sagittis nisi, id viverra elit bibendum id. Duis convallis dui diam, ut condimentum nisl cursus non. In laoreet vitae justo sed ultricies. Donec cursus et leo ut commodo. Morbi lacinia non elit id vestibulum. Maecenas lacus velit, dictum eget dolor ac, gravida lobortis lectus. Nam molestie accumsan nisi, ac dapibus dolor malesuada et. </p>
+    </div>
+    <footer class="panel__footer">
+      <button class="btn">Learn More</button>
+    </footer>
+  </article>
+
+  <!-- Article 3 -->
+  <article class="panel panel--green">
+    <header class="panel__header">
+      <h3 class="panel__title">Article 3</h3>
+    </header>
+    <div class="panel__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac finibus magna. Aenean cursus sagittis nisi, id viverra elit bibendum id. Duis convallis dui diam, ut condimentum nisl cursus non. In laoreet vitae justo sed ultricies. Donec cursus et leo ut commodo. Morbi lacinia non elit id vestibulum. Maecenas lacus velit, dictum eget dolor ac, gravida lobortis lectus. Nam molestie accumsan nisi, ac dapibus dolor malesuada et. </p>
+    </div>
+    <footer class="panel__footer">
+      <button class="btn">Explore Details</button>
+    </footer>
+  </article>
+
+</body>
+</html>

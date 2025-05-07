@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Swatch Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #FFFFFF;
+      color: #212121;
+    }
+    table.swatches {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    table.swatches th,
+    table.swatches td {
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    table.swatches th {
+      background-color: #f4f4f4;
+    }
+    .swatch {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #bbb;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <table class="swatches">
+    <thead>
+      <tr>
+        <th>Color Name</th>
+        <th>Swatch</th>
+        <th>Hex Code</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pure White</td>
+            <td><span class="swatch" style="background-color: #FFFFFF;"></span></td>
+            <td>#FFFFFF</td>
+          </tr>
+          <tr>
+            <td>Off-White</td>
+            <td><span class="swatch" style="background-color: #F5F5F5;"></span></td>
+            <td>#F5F5F5</td>
+          </tr>
+          <tr>
+            <td>Light Grey</td>
+            <td><span class="swatch" style="background-color: #EEEEEE;"></span></td>
+            <td>#EEEEEE</td>
+          </tr>
+          <tr>
+            <td>Dark Grey</td>
+            <td><span class="swatch" style="background-color: #333333;"></span></td>
+            <td>#333333</td>
+          </tr>
+          <tr>
+            <td>Charcoal</td>
+            <td><span class="swatch" style="background-color: #212121;"></span></td>
+            <td>#212121</td>
+      <tr>
+        <td>Warm Grey 100</td>
+        <td><span class="swatch" style="background-color: #F7F6F2;"></span></td>
+        <td>#F7F6F2</td>
+      </tr>
+      <tr>
+        <td>Warm Grey 200</td>
+        <td><span class="swatch" style="background-color: #ECE8E1;"></span></td>
+        <td>#ECE8E1</td>
+      </tr>
+      <tr>
+        <td>Warm Grey 300</td>
+        <td><span class="swatch" style="background-color: #DAD3CA;"></span></td>
+        <td>#DAD3CA</td>
+      </tr>
+      <tr>
+        <td>Warm Grey 400</td>
+        <td><span class="swatch" style="background-color: #BEB2A3;"></span></td>
+        <td>#BEB2A3</td>
+      </tr>
+      <tr>
+        <td>Warm Grey 500</td>
+        <td><span class="swatch" style="background-color: #8F7E6E;"></span></td>
+        <td>#8F7E6E</td>
+      </tr>
+      <tr>
+        <td>Warm Grey 600</td>
+        <td><span class="swatch" style="background-color: #5F4A3C;"></span></td>
+        <td>#5F4A3C</td>
+      </tr>
+
+      <tr>
+        <td>Cool Grey 100</td>
+        <td><span class="swatch" style="background-color: #F2F4F6;"></span></td>
+        <td>#F2F4F6</td>
+      </tr>
+      <tr>
+        <td>Cool Grey 200</td>
+        <td><span class="swatch" style="background-color: #E5E9ED;"></span></td>
+        <td>#E5E9ED</td>
+      </tr>
+      <tr>
+        <td>Cool Grey 300</td>
+        <td><span class="swatch" style="background-color: #CFD8DC;"></span></td>
+        <td>#CFD8DC</td>
+      </tr>
+      <tr>
+        <td>Cool Grey 400</td>
+        <td><span class="swatch" style="background-color: #B0BEC5;"></span></td>
+        <td>#B0BEC5</td>
+      </tr>
+      <tr>
+        <td>Cool Grey 500</td>
+        <td><span class="swatch" style="background-color: #90A4AE;"></span></td>
+        <td>#90A4AE</td>
+      </tr>
+      <tr>
+        <td>Cool Grey 600</td>
+        <td><span class="swatch" style="background-color: #78909C;"></span></td>
+        <td>#78909C</td>
+      </tr>
+      <tr>
+        <td>Bone 100</td>
+        <td><span class="swatch" style="background-color: #F8F6F0;"></span></td>
+        <td>#F8F6F0</td>
+      </tr>
+      <tr>
+        <td>Bone 200</td>
+        <td><span class="swatch" style="background-color: #F2ECE2;"></span></td>
+        <td>#F2ECE2</td>
+      </tr>
+      <tr>
+        <td>Bone 300</td>
+        <td><span class="swatch" style="background-color: #E5DDD0;"></span></td>
+        <td>#E5DDD0</td>
+      </tr>
+      <tr>
+        <td>Bone 400</td>
+        <td><span class="swatch" style="background-color: #D9CFC1;"></span></td>
+        <td>#D9CFC1</td>
+      </tr>
+      <tr>
+        <td>Bone 500</td>
+        <td><span class="swatch" style="background-color: #CBBFA8;"></span></td>
+        <td>#CBBFA8</td>
+      </tr>
+      <tr>
+        <td>Bone 600</td>
+        <td><span class="swatch" style="background-color: #B8AC96;"></span></td>
+        <td>#B8AC96</td>
+      </tr>
+      <tr>
+        <td>Bone 700</td>
+        <td><span class="swatch" style="background-color: #998C79;"></span></td>
+        <td>#998C79</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

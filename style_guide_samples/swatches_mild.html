@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Swatch Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    table.swatches {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    table.swatches th,
+    table.swatches td {
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    table.swatches th {
+      background-color: #f4f4f4;
+    }
+    .swatch {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #bbb;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <table class="swatches">
+    <thead>
+      <tr>
+        <th>Color Name</th>
+        <th>Swatch</th>
+        <th>Hex Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Yellow</td>
+        <td><span class="swatch" style="background-color: #FFD54F;"></span></td>
+        <td>#FFD54F</td>
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td><span class="swatch" style="background-color: #81C784;"></span></td>
+        <td>#81C784</td>
+      </tr>
+      <tr>
+        <td>Blue</td>
+        <td><span class="swatch" style="background-color: #64B5F6;"></span></td>
+        <td>#64B5F6</td>
+      </tr>
+      <tr>
+        <td>Purple</td>
+        <td><span class="swatch" style="background-color: #BA68C8;"></span></td>
+        <td>#BA68C8</td>
+      </tr>
+      <tr>
+        <td>Red</td>
+        <td><span class="swatch" style="background-color: #E57373;"></span></td>
+        <td>#E57373</td>
+      </tr>
+      <tr>
+        <td>Orange</td>
+        <td><span class="swatch" style="background-color: #FFB74D;"></span></td>
+        <td>#FFB74D</td>
+      </tr>
+      <tr>
+        <td>Teal</td>
+        <td><span class="swatch" style="background-color: #4DB6AC;"></span></td>
+        <td>#4DB6AC</td>
+      </tr>
+      
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Swatch Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #FFFFFF;
+      color: #212121;
+    }
+    table.swatches {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    table.swatches th,
+    table.swatches td {
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    table.swatches th {
+      background-color: #f4f4f4;
+    }
+    .swatch {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #bbb;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <table class="swatches">
+    <thead>
+      <tr>
+        <th>Color Name</th>
+        <th>Swatch</th>
+        <th>Hex Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Line Red</td>
+        <td><span class="swatch" style="background-color: #E41A1C;"></span></td>
+        <td>#E41A1C</td>
+      </tr>
+      <tr>
+        <td>Line Blue</td>
+        <td><span class="swatch" style="background-color: #377EB8;"></span></td>
+        <td>#377EB8</td>
+      </tr>
+      <tr>
+        <td>Line Green</td>
+        <td><span class="swatch" style="background-color: #3D8C3B;"></span></td>
+        <td>#3D8C3B</td>
+      </tr>
+      <tr>
+        <td>Line Purple</td>
+        <td><span class="swatch" style="background-color: #984EA3;"></span></td>
+        <td>#984EA3</td>
+      </tr>
+      <tr>
+        <td>Line Orange</td>
+        <td><span class="swatch" style="background-color: #FF7F00;"></span></td>
+        <td>#FF7F00</td>
+      </tr>
+      <tr>
+        <td>Line Yellow</td>
+        <td><span class="swatch" style="background-color: #FFCC00;"></span></td>
+        <td>#FFCC00</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</body>
+</html>
