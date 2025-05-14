@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Scroll Image</title>
+  <style>
+    /* reset */
+    * { margin:0; padding:0; box-sizing:border-box }
+    body { font-family:sans-serif }
+
+    /* fixed header */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 200px;
+      background: #e2e2e2;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    /* make room for the header */
+    main {
+      padding-top: 200px;
+      min-height: 2000px;
+      background: linear-gradient(white,#f0f0f0);
+    }
+
+    /* bus image */
+    .icon {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 150px;      /* adjust to your image’s natural size/aspect */
+      height: auto;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- replace src with the path or URL to your bus image -->
+    <img src="assets/unnamed.png" alt="Icon" class="icon">
+  </header>
+
+  <main></main>
+
+  <script>
+    (function(){
+      const bus   = document.querySelector('.icon');
+      const header= document.querySelector('header');
+      let maxX    = header.clientWidth - bus.clientWidth;
+
+      window.addEventListener('resize', () => {
+        maxX = header.clientWidth - bus.clientWidth;
+      });
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const pct = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+        bus.style.transform = `translateX(${maxX * pct}px)`;
+      });
+    })();
+  </script>
+
+</body>
+</html>

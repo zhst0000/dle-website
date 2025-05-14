@@ -1,202 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Puzzle bus</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background: #FFD700;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            height: 50px;
-        }
-        nav {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            font-weight: bold;
-        }
-        .main-banner {
-            background: green;
-            text-align: center;
-            padding: 50px 0;
-        }
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            width: 80%;
-            margin: auto;
-            position: relative;
-        }
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel img {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 10px;
-            border-radius: 20px;
-        }
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .carousel-controls button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .content-section {
-            background: #f5f1df;
-            display: flex;
-            padding: 20px;
-        }
-        .sidebar {
-            width: 20%;
-            padding: 20px;
-        }
-        .main-content {
-            width: 60%;
-            padding: 20px;
-        }
-        .right-content {
-            width: 20%;
-            font-size: 12px;
-            padding: 20px;
-        }
-        .footer {
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle Bus – Front Page</title>
+  <link rel="stylesheet" href="css/palette.css"/>
+  <link rel="stylesheet" href="css/elements.css"/> 
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f5f5f5;
+    }
+    .news-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .carousel {
+      position: relative;
+      margin-bottom: 32px;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 400px;
+    }
+    .carousel-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 24px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: #fff;
+    }
+    .carousel .category {
+      font-size: 14px; font-weight: 700;
+      text-transform: uppercase; opacity: 0.9;
+      margin-bottom: 8px;
+    }
+    .carousel h2 {
+      font-size: 32px; margin-bottom: 12px;
+    }
+    .carousel p {
+      font-size: 16px; max-width: 75%;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.4); border: none;
+      color: #fff; font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .carousel-button.prev { left: 16px; }
+    .carousel-button.next { right: 16px; }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+    .article-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform .2s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+    }
+    .article-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .article-content {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-content .category {
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; margin-bottom: 8px;
+      color: #555;
+    }
+    .article-content h3 {
+      font-size: 20px; margin-bottom: 12px; flex: 1;
+    }
+    .article-content p {
+      font-size: 14px; margin-bottom: 16px; color: #666;
+    }
+    .article-content .meta {
+      font-size: 12px; color: #999;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .carousel { height: 250px; }
+      .carousel h2 { font-size: 24px; }
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+      .article-card img {
+        height: 160px;
+      }
+    }
+  </style>
 </head>
+
+
 <body>
-    <div class="header">
-        <img src="assets/unnamed.png" class="logo" alt="Logo Left">
-        <img src="assets/unnamed.png" class="logo" alt="Logo Right">
-    </div>
+    <header>
+        <div class="container">
+          <a href="#" class="logo">Puzzle Bus</a>
+          <nav class="site-nav">
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="pages/busline.html">Bus Line</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-    <nav>
-        <a href="reviews.html">Reviews</a>
-        <a href="busline.html">The Bus Line</a>
-        <a href="about.html">About</a>
-        <button style="background-color: #F4C2C2; padding: 5px 10px; border: none; border-radius: 5px;">Subscribe</button>
-    </nav>
+      
 
-    <div class="main-banner">
-        <div class="carousel">
-            <div class="carousel-images" id="carouselImages">
-                <a href="viz_bars.html">
-                    <img src="assets/unnamed.png" alt="Image 1">
-                </a>
-                <a href="viz_radar_html.html">
-                    <img src="assets/unnamed.png" alt="Image 2">
-                </a>
-                <a href="viz_radar_js.html">
-                    <img src="assets/unnamed.png" alt="Image 3">
-                </a>
+      <div class="news-container">
+        <div class="carousel" id="featuredCarousel">
+          <div class="carousel-slide active">
+            <a href="pages/article1.html">
+              <img src="assets/foodguessr1.png" alt="Featured 1">
+              <div class="carousel-overlay">
+                <div class="category">Featured 1</div>
+                <h2>Article 1 Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-slide">
+            <a href="pages/article2.html">
+              <img src="assets/foodguessr2.png" alt="Featured 2">
+              <div class="carousel-overlay">
+                <div class="category">Featured 2</div>
+                <h2>Article 2 Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-slide">
+            <a href="pages/article3.html">
+              <img src="assets/foodguessr3.png" alt="Featured 3">
+              <div class="carousel-overlay">
+                <div class="category">Featured 3</div>
+                <h2>Article 3 Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+          <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+          <button class="carousel-button next" onclick="nextSlide()">❯</button>
+        </div>
+    
+        <div class="article-grid">
+          <article class="article-card">
+            <a href="pages/article1.html">
+              <img src="assets/geography.png" alt="Article 1">
+            </a>
+            <div class="article-content">
+              <div class="category">Review</div>
+              <h3><a href="pages/article1.html">Article 1 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/11/2025</div>
             </div>
-            <div class="carousel-controls">
-                <button onclick="prevSlide()">❮</button>
-                <button onclick="nextSlide()">❯</button>
+          </article>
+    
+          <article class="article-card">
+            <a href="pages/article2.html">
+              <img src="assets/geography.png" alt="Article 2">
+            </a>
+            <div class="article-content">
+              <div class="category">Review</div>
+              <h3><a href="pages/article2.html">Article 2 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/11/2025</div>
             </div>
+          </article>
+    
+          <article class="article-card">
+            <a href="pages/article3.html">
+              <img src="assets/geography.png" alt="Article 3">
+            </a>
+            <div class="article-content">
+              <div class="category">Review</div>
+              <h3><a href="pages/article3.html">Article 3 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/11/2025</div>
+            </div>
+          </article>
+    
+          <article class="article-card">
+            <a href="#">
+              <img src="assets/unnamed.png" alt="Article 4">
+            </a>
+            <div class="article-content">
+              <div class="category">Weekly Highlights</div>
+              <h3><a href="#">Article 4 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/10/2025</div>
+            </div>
+          </article>
+    
+          <article class="article-card">
+            <a href="#">
+              <img src="assets/unnamed.png" alt="Article 5">
+            </a>
+            <div class="article-content">
+              <div class="category">Weekly Highlights</div>
+              <h3><a href="#">Article 5 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/10/2025</div>
+            </div>
+          </article>
+    
+          <article class="article-card">
+            <a href="#">
+              <img src="assets/geography.png" alt="Article 6">
+            </a>
+            <div class="article-content">
+              <div class="category">Review</div>
+              <h3><a href="#">Article 6 Title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
+              <div class="meta">5/10/2025</div>
+            </div>
+          </article>
         </div>
+      </div>
+  <!-- JS Carousel -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let current = 0;
+    function showSlide(idx) {
+      slides[current].classList.remove('active');
+      current = (idx + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+  </script>
+
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-about-header">
+          <div class="footer-icon-space">
+            <img src="" alt="Puzzle Bus Logo">
+          </div>
+          <h4>Puzzle Bus</h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="YouTube">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Reddit">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="pages/busline.html">Bus Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="content-section">
-        <div class="sidebar">
-            <h2>Left Sidebar</h2>
-            <ul>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-
-            </ul>
-        </div>
-        <div class="main-content">
-            <a href="articles/article1.html" style="text-decoration: none; color: inherit;">
-                <div style="background: #ddd; height: 200px; margin-bottom: 10px;">Article 1</div>
-            </a>
-            <a href="articles/article2.html" style="text-decoration: none; color: inherit;">
-                <div style="background: #bbb; height: 100px; margin-bottom: 10px;">Article 2</div>
-            </a>
-            <a href="articles/article3.html" style="text-decoration: none; color: inherit;">
-                <div style="background: #bbb; height: 100px; margin-bottom: 10px;">Article 3</div>
-            </a>
-            <a href="articles/article4.html" style="text-decoration: none; color: inherit;">
-                <div style="background: #ccc; height: 50px;">Article 4</div>
-            </a>
-        </div>
-        
-        <div class="right-content">
-            <p>Right Sidebar link</p>
-            <p>Right Sidebar link</p>
-            <p>Right Sidebar link</p>
-        </div>
+    <div class="footer-bottom">
+      &copy; 2025 Puzzle Bus.
     </div>
-
-    <div class="footer">
-        <div>
-            <h4>Footer</h4>
-            <p>Footer text</p>
-            <div>🔗 🔗 🔗 🔗</div>
-        </div>
-        <div>
-            <h4>Sitemap</h4>
-            <ul>
-                <li>Reviews</li>
-                <li>The Bus Line</li>
-            </ul>
-        </div>
-        <div>
-            <h4>Admin</h4>
-            <ul>
-                <li>FAQ</li>
-                <li>Legal</li>
-                <li>Contact</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        let index = 0;
-        const images = document.getElementById('carouselImages');
-
-        function showSlide(i) {
-            const total = images.children.length;
-            index = (i + total) % total;
-            images.style.transform = `translateX(-${index * 320}px)`;
-        }
-
-        function prevSlide() {
-            showSlide(index - 1);
-        }
-
-        function nextSlide() {
-            showSlide(index + 1);
-        }
-    </script>
+  </footer>
+    
 </body>
 </html>
