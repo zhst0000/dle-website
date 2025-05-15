@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Header Styling-->
+    <style>
+      div.header {
+        margin: 0;
+        background: rgb(190, 229, 242);
+        position: relative;
+        z-index: 0;
+        display: flex;
+        grid-area: header;
+      }
+      div.nav-signs-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 800px;
+        min-width: 500px;
+      }
+      .header-logo {
+        display: inline-block;
+        height: 130px;
+        margin: 10px;
+        vertical-align: middle;
+      }
+
+      .header h1 {
+        font-family: "League gothic", sans-serif;
+        font-size: 90px;
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+        vertical-align: middle;
+        text-wrap: nowrap;
+        margin-right: 30px;
+      }
+
+      .sign-and-post {
+        display: inline-block;
+        transition: all 1s;
+        z-index: 5;
+        margin: 0;
+        scale: 0.5;
+        position: relative;
+        right: 83px;
+        bottom: 60px; /* 110px to be even w/ container */
+      }
+      div.nav-sign {
+        height: 60px;
+        width: 330px;
+        border-radius: 20px;
+        background-color: white;
+        margin-top: 30px;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        transition: 1s;
+      }
+
+      div.nav-sign-text {
+        display: inline-block;
+        background-color: rgb(0, 130, 74);
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border-radius: 15px;
+        vertical-align: middle;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+
+      div.nav-sign-text p {
+        color: white;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 40px;
+        vertical-align: middle;
+        font-weight: bold;
+        margin-top: 2px;
+      }
+
+      .sign-post-design {
+        height: 300px;
+        width: 20px;
+        background: #4f4f4f;
+        background: linear-gradient(
+          90deg,
+          rgba(79, 79, 79, 1) 3%,
+          rgba(156, 156, 156, 1) 97%
+        );
+        left: 150px;
+        bottom: 70px;
+        position: relative;
+        z-index: -1;
+      }
+
+      .sign-and-post:hover {
+        transform: matrix(1, 0, 0, 1, 0, -50);
+      }
+      .sign-and-post:hover > .nav-sign {
+        transform: matrix(1.08, 0, 0, 1.08, 0, 0);
+      }
+
+      .sign-holder {
+        width: 167px;
+        height: 150px;
+        margin-left: 10px;
+      }
+      .title-logo {
+        display: flex;
+      }
+
+      .sign-holder:hover {
+        background-color: rgba(255, 255, 255, 0.203);
+      }
+    </style>
+    <!--Content Styling-->
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: rgb(245, 245, 245);
+        overflow-x: scroll;
+        padding: 1px;
+        position: relative;
+        border-top: 3px solid rgb(69, 126, 145);
+      }
+
+      .footer {
+        grid-area: footer;
+        background-color: rgb(137, 205, 228);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: auto 1fr 200px;
+        grid-template-areas:
+          "header header"
+          "main main"
+          "footer footer";
+        width: 100%;
+      }
+
+      .servicesContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .aboutContainer {
+        position: relative;
+        width: 1000px;
+        
+        background-color: rgb(252, 238, 221);
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .aboutContainer > p {
+        text-align: center;
+      }
+      .aboutContainer h1 {
+        margin: 0;
+      }
+      .service {
+        margin: 5px;
+      }
+
+      .bioContainer {
+        
+        padding: 1px;
+
+        width: 100%;
+      }
+.bioOdd{
+    display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas: "name name" "picture text";
+}
+.bioEven{
+
+        display: grid;
+        grid-template-columns: 1fr 150px;
+        grid-template-areas: "name name" "text picture";
+
+      }
+
+      .bioContainer h2 {
+        grid-area: name;
+      }
+      .bioContainer img {
+        grid-area: picture;
+        width: 150px;
+      }
+      .bioContainer p {
+        grid-area: text;
+        
+      }
+
+
+     
+      .bioOdd p{
+margin-left: 20px;
+margin-top: 5px;
+      }
+
+
+      .bioEven h2{
+text-align: right;
+      }
+
+ .bioEven p{
+margin-right: 20px;
+margin-top: 5px;
+      }
+
+
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="title-logo">
+          <img class="header-logo" src="assets/outlined-logo.png" alt="" />
+          <h1>Puzzle Bus</h1>
+        </div>
+
+        <div class="nav-signs-container">
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div class="nav-sign-text">
+                  <p>SHORTLIST</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(36, 116, 82)"
+                >
+                  <p>REVIEWS</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(4, 144, 53)"
+                >
+                  <p>ABOUT</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="aboutContainer">
+          <h1>A Home for Puzzle Lovers</h1>
+          <p>
+            Created by two friends and puzzle enthusiasts, Puzzle Bus, in its
+            current form, is a space for the aggregation, review, and discussion
+            of our favorite daily games. Our goal for this project is to create
+            a shared hub for fellow lovers of daily games where we can play and
+            discuss our favorite games.
+          </p>
+          <div class="servicesContainer">
+            <div class="service">
+              <h2>The Shortlist</h2>
+              <p>
+                &emsp;&emsp;The culmination of our many hours spent playing,
+                reviewing, and rating scores of daily games, the shortlist is
+                designed to help daily game players quickly find the best games
+                in the categories that interest them.
+              </p>
+            </div>
+            <div class="service">
+              <h2>Reviews</h2>
+              <p>
+                &emsp;&emsp;Reviews represent the leading written long-form
+                content on puzzle bus as it exists today. The goal of the
+                reviews is to justify our evaluations of the various rated games
+                on our website.
+              </p>
+            </div>
+
+            <div class="service">
+              <h2>Weekly Highlights</h2>
+              <p>
+                &emsp;&emsp;The weekly highlights are the first step of our goal
+                to foster a community of people with a similar interest in these
+                games. We see these as a starting point for a wider conversation
+                about the community or simply a discussion about an individual
+                puzzle or clue.
+              </p>
+            </div>
+          </div>
+          <h2 style="margin: 0; text-align: center;">The Team</h2>
+          <div class="bioContainer bioOdd">
+            <h2>Steven Zhang</h2>
+
+            <img src="assets/unnamed.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem necessitatibus atque voluptatum quas repellat dolorem
+              quos veritatis fugiat. Animi, corrupti totam. Aut tenetur
+              assumenda nisi placeat omnis cumque ullam a ipsum culpa molestiae
+              quibusdam, illo quam nulla. Doloribus voluptatum ipsum adipisci
+              eveniet, est magnam ab velit tenetur assumenda rem sit porro animi
+              iusto explicabo quisquam nostrum dicta, laboriosam suscipit non
+              nesciunt minus odit! Soluta molestias placeat hic quis animi
+              possimus suscipit architecto iure cumque officiis iste illo
+              impedit ipsam officia inventore perferendis optio distinctio,
+              deserunt tenetur nesciunt itaque vel magnam. Aliquam, unde!
+              Ratione tenetur doloremque, delectus dignissimos quisquam aliquam?
+              Rem?
+            </p>
+          </div>
+          <div class="bioContainer bioEven">
+            <h2>Wiley Chambers</h2>
+
+            <img src="assets/unnamed.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem necessitatibus atque voluptatum quas repellat dolorem
+              quos veritatis fugiat. Animi, corrupti totam. Aut tenetur
+              assumenda nisi placeat omnis cumque ullam a ipsum culpa molestiae
+              quibusdam, illo quam nulla. Doloribus voluptatum ipsum adipisci
+              eveniet, est magnam ab velit tenetur assumenda rem sit porro animi
+              iusto explicabo quisquam nostrum dicta, laboriosam suscipit non
+              nesciunt minus odit! Soluta molestias placeat hic quis animi
+              possimus suscipit architecto iure cumque officiis iste illo
+              impedit ipsam officia inventore perferendis optio distinctio,
+              deserunt tenetur nesciunt itaque vel magnam. Aliquam, unde!
+              Ratione tenetur doloremque, delectus dignissimos quisquam aliquam?
+              Rem?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">lorem</div>
+    </div>
+  </body>
+</html>
