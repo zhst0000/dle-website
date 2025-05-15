@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Header Styling-->
+    <style>
+      div.header {
+        margin: 0;
+        background: rgb(190, 229, 242);
+        position: relative;
+        z-index: 0;
+        display: flex;
+        grid-area: header;
+      }
+      div.nav-signs-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 800px;
+        min-width: 500px;
+      }
+      .header-logo {
+        display: inline-block;
+        height: 130px;
+        margin: 10px;
+        vertical-align: middle;
+      }
+
+      .header h1 {
+        font-family: "League gothic", sans-serif;
+        font-size: 90px;
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+        vertical-align: middle;
+        text-wrap: nowrap;
+        margin-right: 30px;
+      }
+
+      .sign-and-post {
+        display: inline-block;
+        transition: all 1s;
+        z-index: 5;
+        margin: 0;
+        scale: 0.5;
+        position: relative;
+        right: 83px;
+        bottom: 60px; /* 110px to be even w/ container */
+      }
+      div.nav-sign {
+        height: 60px;
+        width: 330px;
+        border-radius: 20px;
+        background-color: white;
+        margin-top: 30px;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        transition: 1s;
+      }
+
+      div.nav-sign-text {
+        display: inline-block;
+        background-color: rgb(0, 130, 74);
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border-radius: 15px;
+        vertical-align: middle;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+
+      div.nav-sign-text p {
+        color: white;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 40px;
+        vertical-align: middle;
+        font-weight: bold;
+        margin-top: 2px;
+      }
+
+      .sign-post-design {
+        height: 300px;
+        width: 20px;
+        background: #4f4f4f;
+        background: linear-gradient(
+          90deg,
+          rgba(79, 79, 79, 1) 3%,
+          rgba(156, 156, 156, 1) 97%
+        );
+        left: 150px;
+        bottom: 70px;
+        position: relative;
+        z-index: -1;
+      }
+
+      .sign-and-post:hover {
+        transform: matrix(1, 0, 0, 1, 0, -50);
+      }
+      .sign-and-post:hover > .nav-sign {
+        transform: matrix(1.08, 0, 0, 1.08, 0, 0);
+      }
+
+      .sign-holder {
+        width: 167px;
+        height: 150px;
+        margin-left: 10px;
+      }
+      .title-logo {
+        display: flex;
+      }
+
+      .sign-holder:hover {
+        background-color: rgba(255, 255, 255, 0.203);
+      }
+    </style>
+    <!--Content Styling-->
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: rgb(245, 245, 245);
+        overflow-x: scroll;
+        padding: 1px;
+        position: relative;
+        border-top: 3px solid rgb(69, 126, 145);
+      }
+      main > h1 {
+        margin-left: 20px;
+      }
+
+      .footer {
+        grid-area: footer;
+        background-color: rgb(137, 205, 228);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: auto 1fr 200px;
+        grid-template-areas:
+          "header header"
+          "main main"
+          "footer footer";
+        width: 100%;
+      }
+
+      .main > h1 {
+        margin: 0;
+        font-size: 50px;
+        margin-left: 20px;
+      }
+      .main > h2 {
+        font-style: italic;
+        margin-top: 0;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      .contactCard > a {
+        color: #4f4f4f;
+      }
+
+      .contactCard {
+        background-color: rgb(252, 238, 221);
+        display: inline-block;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 30px;
+        position: relative;
+        border: 1px solid rgb(249, 211, 164);
+      }
+
+      .platformsContainer {
+        display: grid;
+        height: 75px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        grid-template-areas: "platform1 platform2 platform3 platform4";
+        position: relative;
+        
+       
+      }
+
+      .platform1 {
+        grid-area: platform1;
+
+        
+      }
+      .platform2 {
+        grid-area: platform2;
+      }
+      .platform3 {
+        grid-area: platform3;
+      }
+      .platform4 {
+        grid-area: platform4;
+      }
+      .platformsContainer img {
+        height: 75px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .platformsContainer a {
+        justify-self: center;
+        position: relative;
+        z-index: 1;
+        align-self: center;
+      }
+      .platformBackground{
+        position: absolute;
+        background-color: rgb(252, 238, 221);
+       
+        height: 70px;
+        width: 70px;
+        z-index: 1;
+        border-radius: 100%;
+        top: 2px;
+        left: 2px;
+      }
+
+.platformDesign{
+    position: absolute;
+    background-color: black;
+    height: 20px;
+    width: calc(100% - 150px);
+    top: 27.5px;
+    left: 75px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="title-logo">
+          <img class="header-logo" src="assets/outlined-logo.png" alt="" />
+          <h1>Puzzle Bus</h1>
+        </div>
+
+        <div class="nav-signs-container">
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div class="nav-sign-text">
+                  <p>SHORTLIST</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(36, 116, 82)"
+                >
+                  <p>REVIEWS</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(4, 144, 53)"
+                >
+                  <p>ABOUT</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="contactCard">
+          <h1>Contact Us</h1>
+          <h2>Via Email</h2>
+          <a href="mailto:PuzzleBusGame@gmail.com">
+            <h3>PuzzleBusGame@gmail.com</h3></a
+          >
+          <h2>Or Join the Conversation on These Platforms:</h2>
+          <div class="platformsContainer">
+<div class="platformDesign"></div>
+            
+            <a href="https://reddit.com" target="_blank"
+              ><div class="platformBackground platform1"></div><img class="platform1" src="assets/redditIcon.png"
+            /></a>
+            <a href="https://instagram.com" target="_blank"
+              ><div class="platformBackground platform2"></div><img class="platform2" src="assets/instagramIcon.png"
+            /></a>
+            <a href="https://youtube.com" target="_blank"
+              ><div class="platformBackground platform3"></div><img class="platform3" src="assets/youtubeIcon.png"
+            /></a>
+            <a href="https://facebook.com" target="_blank"
+              ><div class="platformBackground platform4"></div><img class="platform4" src="assets/facebookIcon.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">lorem</div>
+    </div>
+  </body>
+</html>

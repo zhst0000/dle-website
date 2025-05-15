@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+
+    <!--Header Styling-->
+    <style>
+      div.header {
+        margin: 0;
+        background: rgb(190, 229, 242);
+        position: relative;
+        z-index: 0;
+        display: flex;
+        grid-area: header;
+      }
+      div.nav-signs-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 800px;
+        min-width: 500px;
+      }
+      .header-logo {
+        display: inline-block;
+        height: 130px;
+        margin: 10px;
+        vertical-align: middle;
+      }
+
+      .header h1 {
+        font-family: "League gothic", sans-serif;
+        font-size: 90px;
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+        vertical-align: middle;
+        text-wrap: nowrap;
+        margin-right: 30px;
+      }
+
+      .sign-and-post {
+        display: inline-block;
+        transition: all 1s;
+        z-index: 5;
+        margin: 0;
+        scale: 0.5;
+        position: relative;
+        right: 83px;
+        bottom: 60px; /* 110px to be even w/ container */
+      }
+      div.nav-sign {
+        height: 60px;
+        width: 330px;
+        border-radius: 20px;
+        background-color: white;
+        margin-top: 30px;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        transition: 1s;
+      }
+
+      div.nav-sign-text {
+        display: inline-block;
+        background-color: rgb(0, 130, 74);
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border-radius: 15px;
+        vertical-align: middle;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+
+      div.nav-sign-text p {
+        color: white;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 40px;
+        vertical-align: middle;
+        font-weight: bold;
+        margin-top: 2px;
+      }
+
+      .sign-post-design {
+        height: 300px;
+        width: 20px;
+        background: #4f4f4f;
+        background: linear-gradient(
+          90deg,
+          rgba(79, 79, 79, 1) 3%,
+          rgba(156, 156, 156, 1) 97%
+        );
+        left: 150px;
+        bottom: 70px;
+        position: relative;
+        z-index: -1;
+      }
+
+      .sign-and-post:hover {
+        transform: matrix(1, 0, 0, 1, 0, -50);
+      }
+      .sign-and-post:hover > .nav-sign {
+        transform: matrix(1.08, 0, 0, 1.08, 0, 0);
+      }
+
+      .sign-holder {
+        width: 167px;
+        height: 150px;
+        margin-left: 10px;
+      }
+      .title-logo {
+        display: flex;
+      }
+
+      .sign-holder:hover {
+        background-color: rgba(255, 255, 255, 0.203);
+      }
+    </style>
+    <!--Content Styling-->
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: rgb(216, 217, 218);
+       overflow-x: hidden;
+        padding-top: 20px;
+        padding-bottom: 1px;
+        padding-left: 1px;
+        padding-right: 30px;
+        position: relative;
+        border-top: 3px solid rgb(69, 126, 145);
+      }
+      main > h1 {
+        margin-left: 20px;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background-color: white;
+        border-top: 3px solid rgb(69, 126, 145);
+      }
+      .footer {
+        grid-area: footer;
+        background-color: rgb(137, 205, 228);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: auto 1fr 200px;
+        grid-template-areas:
+          "header header"
+          "main sidebar"
+          "footer footer";
+        width: 100%;
+      }
+
+      .category {
+        background-color: rgb(252, 232, 208);
+        padding: 20px;
+        border-radius: 25px;
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        display: flex;
+        position: relative;
+        width: fit-content;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border: 1px solid rgb(250, 201, 141);
+      }
+
+      .category:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      }
+
+      /* .category > h1 {
+        display: inline-block;
+        height: 815px;
+        vertical-align: top;
+        margin: 0;
+        width: 200px;
+        
+       
+        
+      } */
+
+
+      .category-title h1{
+font-family: "arial", sans-serif;
+font-size: 32px;
+
+      }
+
+      img.game-logo {
+        width: 200px;
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .subcategory {
+        display: inline-block;
+        text-align: center;
+        height: auto;
+        min-width: 200px;
+        width: 200px;
+        margin-left: 60px;
+        margin-top: 0px;
+      }
+
+      .subcategory-design {
+        height: 75px;
+        display: block;
+      }
+
+      .subcategory-design img {
+        height: 50px;
+
+        position: relative;
+        top: 12.5px;
+      }
+      .category-title {
+        display: inline-block;
+        vertical-align: top;
+        width: 175px;
+        text-align: center;
+      }
+
+      .category-title img {
+        justify-self: center;
+        width: 75px;
+        z-index: 1;
+        position: absolute;
+        left: 70px;
+      }
+
+      .category-design {
+        position: absolute;
+        width: 50px;
+        height: 119px;
+        left: 82.5px;
+        top: 151px;
+        z-index: 1;
+      }
+
+      .category-design-horizontal {
+        position: absolute;
+        height: 50px;
+        width: calc(100% - 250px);
+        top: 269px;
+        left: 131.5px;
+      }
+      .category-design-curve {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0% 100%);
+        top: 219px;
+        left: 82.5px;
+      }
+      .geography-design {
+        background-color: #377eb8;
+      }
+
+      .film-design {
+        background-color: #e41a1c;
+      }
+
+      .category h2 {
+        margin: 0;
+      }
+
+      .category h3 {
+        margin: 0;
+      }
+
+      .category p {
+        margin: 0;
+        height: 111px;
+        width: auto;
+      }
+
+      .category-holder {
+        overflow-x: scroll;
+      }
+
+      .jumpbar a {
+        font-weight: bold;
+        margin-right: 10px;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 8px;
+        color: black;
+      }
+      .jumpbar a:visited {
+        font-weight: bold;
+        margin-right: 10px;
+        color: black;
+        font-style: normal;
+        text-decoration: none;
+      }
+
+      .main > h1 {
+        margin: 0;
+        font-size: 50px;
+        margin-left: 20px;
+      }
+      .main > h2 {
+        font-style: italic;
+        margin-top: 0;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .jumpbar {
+        margin-right: 200px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      .jumpbar > h3 {
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline-block;
+      }
+
+      .jumpbar > a:hover {
+        background-color: rgb(239, 237, 237);
+      }
+
+      #rightfade {
+        height: 100%;
+        width: 60px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background-image: linear-gradient(
+          to right,
+          rgba(216, 217, 218, 0),
+          rgb(216, 217, 218),
+          rgb(216, 217, 218)
+        );
+      }
+
+      .subcategory img[src*="Stop icon.png"] {
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+      .subcategory:hover img[src*="Stop icon.png"] {
+        scale: 1.2;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="title-logo">
+          <img class="header-logo" src="assets/outlined-logo.png" alt="" />
+          <h1>Puzzle Bus</h1>
+        </div>
+
+        <div class="nav-signs-container">
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div class="nav-sign-text">
+                  <p>SHORTLIST</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(36, 116, 82)"
+                >
+                  <p>REVIEWS</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+
+          <div class="sign-holder">
+            <div class="sign-and-post">
+              <div class="nav-sign">
+                <div
+                  class="nav-sign-text"
+                  style="background-color: rgb(4, 144, 53)"
+                >
+                  <p>ABOUT</p>
+                </div>
+              </div>
+              <div class="sign-post-design"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div id="rightfade"></div>
+        <h1>The Shortlist</h1>
+        <h2>Our Favorite Games by Category</h2>
+        <div class="jumpbar">
+          <h3>Jump:</h3>
+          <a href="#geography">Geography</a><a href="#film">Movies</a
+          ><a href="#film">Trivia</a><a href="#film">Words</a
+          ><a href="#film">Sports</a>
+        </div>
+
+        <div class="category-holder" id="geography">
+          <div class="category">
+            <div class="category-design-horizontal geography-design"></div>
+            <div class="category-design-curve geography-design"></div>
+            <div class="category-title">
+              <h1>Geography</h1>
+              <div class="category-design geography-design"></div>
+
+              <img src="assets/geography-icon.png" alt="" />
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/new-logo.png" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best Flag Game</h2>
+            </div>
+            <div class="subcategory">
+              <img
+                class="game-logo"
+                style="filter: brightness(1.5)"
+                src="assets/catfish.png"
+                alt=""
+              />
+
+              <h3>Catfishing</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+          </div>
+        </div>
+        <div class="category-holder" id="film">
+          <div class="category">
+            <div class="category-design-horizontal film-design"></div>
+            <div class="category-design-curve film-design"></div>
+            <div class="category-title">
+              <h1>Film</h1>
+              <div class="category-design film-design"></div>
+
+              <img src="assets/geography-icon.png" alt="" />
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/new-logo.png" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best Flag Game</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">hello</div>
+      <div class="footer">hello</div>
+    </div>
+  </body>
+</html>
