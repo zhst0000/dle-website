@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Scroll-Fill Vertical Subway Line</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 300vh;               /* enough to scroll */
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+
+    /* Fixed SVG strip on the right */
+    #subway-svg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80px;                 /* narrow strip */
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      overflow: visible;           /* so stations near edges aren’t clipped */
+    }
+
+    /* the line itself */
+    #subway-path {
+      fill: none;
+      stroke: #ff5722;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 0;         /* will be set in JS */
+      stroke-dashoffset: 0;        /* likewise */
+    }
+
+    /* station circles */
+    .station {
+      stroke: #ff5722;
+      stroke-width: 4;
+      fill: #fff;                  /* unfilled until reached */
+      transition: fill 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <svg id="subway-svg" viewBox="0 0 200 1000" preserveAspectRatio="xMaxYMin slice">
+    <!-- vertical line from top (0) to bottom (1000) -->
+    <path id="subway-path" d="M100,0 L100,1000" />
+    <!-- stations at y = 150, 350, 600, 850 -->
+    <circle class="station" cx="100" cy="150" r="12" data-pos="150"/>
+    <circle class="station" cx="100" cy="350" r="12" data-pos="350"/>
+    <circle class="station" cx="100" cy="600" r="12" data-pos="600"/>
+    <circle class="station" cx="100" cy="850" r="12" data-pos="850"/>
+  </svg>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const path = document.getElementById('subway-path');
+      const stations = Array.from(document.querySelectorAll('.station'));
+
+      // total path length
+      const pathLength = path.getTotalLength();
+
+      // set up dash array so it's hidden initially
+      path.style.strokeDasharray = pathLength;
+      path.style.strokeDashoffset = pathLength;
+
+      // precompute each station's trigger length (proportional along the path)
+      const viewBoxHeight = 1000; // as declared in viewBox
+      stations.forEach(station => {
+        const y = parseFloat(station.getAttribute('data-pos'));
+        station._triggerLength = (y / viewBoxHeight) * pathLength;
+      });
+
+      // on scroll, update line and station fills
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+
+            // draw the line
+            const offset = pathLength * (1 - progress);
+            path.style.strokeDashoffset = offset;
+
+            // fill any stations the line has passed
+            const drawn = pathLength - offset;
+            stations.forEach(station => {
+              if (drawn >= station._triggerLength) {
+                station.style.fill = '#ff5722';
+              } else {
+                station.style.fill = '#fff';
+              }
+            });
+
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+      onScroll(); // init in case refresh mid-scroll
+    });
+  </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../css/palette.css"/>
   <meta charset="UTF-8">
   <title>Rubric</title>
   <style>
@@ -13,17 +14,12 @@
     .container {
       position: relative;
       max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .line {
-      position: absolute;
-      width: 8px;
-      background-color: #ccc;
-      left: 25px;
-      top: 0;
-      bottom: 0;
-      z-index: 0;
+      padding: 10px;               
+      background: var(--color-bg-header);                             
+      border-radius: 8px;             
+      box-shadow: 
+        0 2px 4px rgba(0,0,0,0.08),   
+        0 6px 12px rgba(0,0,0,0.12);  
     }
 
     .station {
@@ -50,10 +46,6 @@
       z-index: 2;
     }
 
-    .info-block {
-      flex-grow: 1;
-    }
-
     .category {
       font-size: 1.3em;
       font-weight: bold;
@@ -71,6 +63,10 @@
       position: relative;
     }
 
+    .bar-container + div {
+      margin-left: 40px;  
+    }
+
     .bar {
       height: 100%;
       border-radius: 6px;
@@ -78,23 +74,22 @@
 
     /* Colors for each category */
     .overall .circle, .overall .bar {
-      background-color: #f4c542;
+      background-color: var(--color-nav-hover-1);
     }
     .service .circle, .service .bar {
-      background-color: #e64c3c;
+      background-color: var(--color-nav-hover-2);
     }
     .value .circle, .value .bar {
-      background-color: #3cba54;
+      background-color: var(--color-nav-hover-3);
     }
     .location .circle, .location .bar {
-      background-color: #3c8dbc;
+      background-color: var(--color-nav-hover-4);
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="line"></div>
 
     <div class="station overall">
       <div class="circle">1.0</div>
@@ -103,7 +98,7 @@
         <div class="bar-container">
           <div class="bar" style="width: 20%;"></div>
         </div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
       </div>
     </div>
 

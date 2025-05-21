@@ -1,0 +1,46 @@
+
+  <div class="container">
+    <div class="station overall">
+      <div class="circle">1.0</div>
+      <div class="info-block">
+        <div class="category">Theme</div>
+        <div class="bar-container">
+          <div class="bar" style="width: 20%;"></div>
+        </div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      </div>
+    </div>
+
+    <div class="station service">
+      <div class="circle">2.0</div>
+      <div class="info-block">
+        <div class="category">Gameplay and Mechanics</div>
+        <div class="bar-container">
+          <div class="bar" style="width: 40%;"></div>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      </div>
+    </div>
+
+    <div class="station value">
+      <div class="circle">3.0</div>
+      <div class="info-block">
+        <div class="category">Accessibility</div>
+        <div class="bar-container">
+          <div class="bar" style="width: 60%;"></div>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      </div>
+    </div>
+
+    <div class="station location">
+      <div class="circle">4.0</div>
+      <div class="info-block">
+        <div class="category">Engineering</div>
+        <div class="bar-container">
+          <div class="bar" style="width: 80%;"></div>
+        </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      </div>
+    </div>
+  </div>
