@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle Bus – Front Page</title>
+  <link rel="stylesheet" href="css/palette.css"/>
+  <link rel="stylesheet" href="css/elements.css"/> 
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f5f5f5;
+      
+    }
+
+    .main {
+       
+       
+        overflow-x: hidden;
+        padding-top: 20px;
+        padding-bottom: 1px;
+        padding-left: 1px;
+        padding-right: 30px;
+        position: relative;
+     
+        line-height: 1;
+      }
+      main > h1 {
+        margin-left: 20px;
+      }
+
+      .category {
+        background-color: rgb(252, 232, 208);
+        padding: 20px;
+        border-radius: 25px;
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        display: flex;
+        position: relative;
+        width: fit-content;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border: 1px solid rgb(250, 201, 141);
+       
+      }
+
+      .category:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      }
+
+      
+
+      
+
+      img.game-logo {
+        width: 200px;
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .subcategory {
+        display: inline-block;
+        text-align: center;
+        height: auto;
+        min-width: 200px;
+        width: 200px;
+        margin-left: 60px;
+        margin-top: 0px;
+      }
+
+      .subcategory-design {
+        height: 75px;
+        display: block;
+      }
+
+      .subcategory-design img {
+        height: 50px;
+
+        position: relative;
+        top: 18px;
+      }
+      .category-title {
+        display: inline-block;
+        vertical-align: top;
+        width: 175px;
+        text-align: center;
+       
+      }
+
+      .category-title img {
+        justify-self: center;
+        width: 75px;
+        z-index: 1;
+        position: absolute;
+        left: 95px;
+        top: 260px;
+      }
+
+      .category-design {
+        position: absolute;
+        width: 50px;
+        height: 100px;
+        left: 107.5px;
+        top: 212px;
+        z-index: 1;
+      }
+
+      .category-design-horizontal {
+        position: absolute;
+        height: 50px;
+        width: calc(100% - 275px);
+        top: 164px;
+        left: 156.5px;
+      }
+      .category-design-curve {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0% 100%);
+        top: 164px;
+        left: 107.5px;
+        rotate: 90deg;
+      }
+      .geography-design {
+        background-color: #377eb8;
+      }
+
+      .film-design {
+        background-color: #e41a1c;
+      }
+
+      .category h2 {
+        margin: 0;
+      }
+
+      .category h3 {
+        margin: 0;
+      }
+
+      .category p {
+        margin: 0;
+        height: 111px;
+        width: auto;
+      }
+
+      .category-holder {
+        overflow-x: scroll;
+        
+      }
+
+      .jumpbar a {
+        font-weight: bold;
+        margin-right: 10px;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 8px;
+        color: black;
+      }
+      .jumpbar a:visited {
+        font-weight: bold;
+        margin-right: 10px;
+        color: black;
+        font-style: normal;
+        text-decoration: none;
+      }
+
+      .main > h1 {
+        margin: 0;
+        font-size: 50px;
+        margin-left: 20px;
+      }
+      .main > h2 {
+        font-style: italic;
+        margin-top: 0;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .jumpbar {
+        margin-right: 200px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+      .jumpbar > h3 {
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline-block;
+      }
+
+      .jumpbar > a:hover {
+        background-color: rgb(239, 237, 237);
+      }
+
+      #rightfade {
+        height: 100%;
+        width: 60px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background-image: linear-gradient(
+          to right,
+          rgba(216, 217, 218, 0),
+          rgb(216, 217, 218),
+          rgb(216, 217, 218)
+        );
+      }
+
+      .subcategory img[src*="Stop icon.png"] {
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+      .subcategory:hover img[src*="Stop icon.png"] {
+        scale: 1.2;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+      
+
+.title{
+    display: inline-block;
+    writing-mode: sideways-lr;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+   
+}
+.category mark{
+background-color: rgb(250, 224, 191);
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 0px;
+border-radius: 8px;
+text-decoration: underline;
+}
+
+
+  </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+          <a href="#" class="logo">Puzzle Bus</a>
+          <nav class="site-nav">
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="pages/busline.html">Bus Line</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="main">
+        <div id="rightfade"></div>
+        <h1>The Shortlist</h1>
+        <h2>Our Favorite Games by Category</h2>
+        <div class="jumpbar">
+          <h3>Jump:</h3>
+          <a href="#geography">Geography</a><a href="#film">Movies</a
+          ><a href="#film">Trivia</a><a href="#film">Words</a
+          ><a href="#film">Sports</a>
+        </div>
+
+        <div class="category-holder" id="geography">
+          <div class="category">
+            <div class="category-design-horizontal geography-design"></div>
+            <div class="category-design-curve geography-design"></div>
+            <div class="title"><mark>Geography</mark></div>
+            <div class="category-title">
+              
+              <div class="category-design geography-design"></div>
+
+              <img src="assets/geography-icon.png" alt="" />
+            </div>
+            <div class="subcategory" style="margin-left: 0;">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+              <h2>Best in Class</h2>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+              <h2>Best in Class</h2>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+              <h2>Best in Class</h2>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+              <h2>Best in Class</h2>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+              <h2>Best in Class</h2>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="category-holder" id="film">
+          <div class="category">
+            <div class="category-design-horizontal film-design"></div>
+            <div class="category-design-curve film-design"></div>
+            <div class="category-title">
+              <h1>Film</h1>
+              <div class="category-design film-design"></div>
+
+              <img src="assets/geography-icon.png" alt="" />
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/new-logo.png" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best Flag Game</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+            <div class="subcategory">
+              <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
+
+              <h3>TimeGussr</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                deleniti a voluptates assumenda animi doloremque nemo quo
+                distinctio facilis eaque?
+              </p>
+              <div class="subcategory-design">
+                <img src="assets/Stop icon.png" alt="" />
+              </div>
+              <h2>Best in Class</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-about-header">
+          <div class="footer-icon-space">
+            <img src="" alt="Puzzle Bus Logo">
+          </div>
+          <h4>Puzzle Bus</h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="YouTube">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Reddit">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="pages/busline.html">Bus Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Puzzle Bus.
+    </div>
+  </footer>
+    
+</body>
+</html>

@@ -1,170 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle Bus – Front Page</title>
+  <link rel="stylesheet" href="css/palette.css"/>
+  <link rel="stylesheet" href="css/elements.css"/> 
 
-    <!--Header Styling-->
-    <style>
-      div.header {
-        margin: 0;
-        background: rgb(190, 229, 242);
-        position: relative;
-        z-index: 0;
-        display: flex;
-        grid-area: header;
-      }
-      div.nav-signs-container {
-        display: flex;
-        justify-content: space-evenly;
-        width: 800px;
-        min-width: 500px;
-      }
-      .header-logo {
-        display: inline-block;
-        height: 130px;
-        margin: 10px;
-        vertical-align: middle;
-      }
-
-      .header h1 {
-        font-family: "League gothic", sans-serif;
-        font-size: 90px;
-        display: inline-block;
-        margin-top: auto;
-        margin-bottom: auto;
-        vertical-align: middle;
-        text-wrap: nowrap;
-        margin-right: 30px;
-      }
-
-      .sign-and-post {
-        display: inline-block;
-        transition: all 1s;
-        z-index: 5;
-        margin: 0;
-        scale: 0.5;
-        position: relative;
-        right: 83px;
-        bottom: 60px; /* 110px to be even w/ container */
-      }
-      div.nav-sign {
-        height: 60px;
-        width: 330px;
-        border-radius: 20px;
-        background-color: white;
-        margin-top: 30px;
-        border: 2px;
-        border-color: black;
-        border-style: solid;
-        transition: 1s;
-      }
-
-      div.nav-sign-text {
-        display: inline-block;
-        background-color: rgb(0, 130, 74);
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        border-radius: 15px;
-        vertical-align: middle;
-        margin-top: 5px;
-        margin-left: 5px;
-      }
-
-      div.nav-sign-text p {
-        color: white;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 40px;
-        vertical-align: middle;
-        font-weight: bold;
-        margin-top: 2px;
-      }
-
-      .sign-post-design {
-        height: 300px;
-        width: 20px;
-        background: #4f4f4f;
-        background: linear-gradient(
-          90deg,
-          rgba(79, 79, 79, 1) 3%,
-          rgba(156, 156, 156, 1) 97%
-        );
-        left: 150px;
-        bottom: 70px;
-        position: relative;
-        z-index: -1;
-      }
-
-      .sign-and-post:hover {
-        transform: matrix(1, 0, 0, 1, 0, -50);
-      }
-      .sign-and-post:hover > .nav-sign {
-        transform: matrix(1.08, 0, 0, 1.08, 0, 0);
-      }
-
-      .sign-holder {
-        width: 167px;
-        height: 150px;
-        margin-left: 10px;
-      }
-      .title-logo {
-        display: flex;
-      }
-
-      .sign-holder:hover {
-        background-color: rgba(255, 255, 255, 0.203);
-      }
-    </style>
-    <!--Content Styling-->
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .main {
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f5f5f5;
+    }
+    .main {
         grid-area: main;
         background-color: rgb(245, 245, 245);
         overflow-x: scroll;
         padding: 1px;
         position: relative;
-        border-top: 3px solid rgb(69, 126, 145);
+        
       }
 
-      .footer {
-        grid-area: footer;
-        background-color: rgb(137, 205, 228);
-      }
-
-      .containerLayout {
-        display: grid;
-        grid-template-columns: 1fr 200px;
-        grid-template-rows: auto 1fr 200px;
-        grid-template-areas:
-          "header header"
-          "main main"
-          "footer footer";
-        width: 100%;
-      }
-
+    
       .servicesContainer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 30px;
       }
 
       .aboutContainer {
         position: relative;
         width: 1000px;
-        
+        border: 2px solid rgb(246, 209, 163) ;
         background-color: rgb(252, 238, 221);
         margin: auto;
         margin-top: 10px;
@@ -180,8 +51,14 @@
       }
       .service {
         margin: 5px;
+        border-radius: 0px;
+       background-color: rgba(246, 209, 163, 0.17);
+       padding: 15px;
       }
+.service h2{
 
+    text-align: center;
+}
       .bioContainer {
         
         padding: 1px;
@@ -233,62 +110,35 @@ margin-top: 5px;
 .aboutContainer > h2{
     margin: 0; 
     text-align: center;
-    border-top: 1px solid black;
+  
     padding-top: 15px;
 }
       
+      
+  </style>
+</head>
 
-    </style>
-  </head>
-  <body>
-    <div class="containerLayout">
-      <div class="header">
-        <div class="title-logo">
-          <img class="header-logo" src="assets/outlined-logo.png" alt="" />
-          <h1>Puzzle Bus</h1>
+
+<body>
+    <header>
+        <div class="container">
+          <a href="#" class="logo">Puzzle Bus</a>
+          <nav class="site-nav">
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="pages/busline.html">Bus Line</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
         </div>
+      </header>
 
-        <div class="nav-signs-container">
-          <div class="sign-holder">
-            <div class="sign-and-post">
-              <div class="nav-sign">
-                <div class="nav-sign-text">
-                  <p>SHORTLIST</p>
-                </div>
-              </div>
-              <div class="sign-post-design"></div>
-            </div>
-          </div>
 
-          <div class="sign-holder">
-            <div class="sign-and-post">
-              <div class="nav-sign">
-                <div
-                  class="nav-sign-text"
-                  style="background-color: rgb(36, 116, 82)"
-                >
-                  <p>REVIEWS</p>
-                </div>
-              </div>
-              <div class="sign-post-design"></div>
-            </div>
-          </div>
 
-          <div class="sign-holder">
-            <div class="sign-and-post">
-              <div class="nav-sign">
-                <div
-                  class="nav-sign-text"
-                  style="background-color: rgb(4, 144, 53)"
-                >
-                  <p>ABOUT</p>
-                </div>
-              </div>
-              <div class="sign-post-design"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
       <div class="main">
         <div class="aboutContainer">
           <h1>A Home for Puzzle Lovers</h1>
@@ -329,10 +179,10 @@ margin-top: 5px;
                 puzzle or clue.
               </p>
             </div>
-          </div>
+          </div> </div> <div class="aboutContainer">
           <h2>The Team</h2>
           <div class="bioContainer bioOdd">
-            <h2>Steven Zhang</h2>
+            <h2>Steven Z</h2>
 
             <img src="assets/unnamed.png" alt="" />
             <p>
@@ -352,7 +202,7 @@ margin-top: 5px;
             </p>
           </div>
           <div class="bioContainer bioEven">
-            <h2>Wiley Chambers</h2>
+            <h2>Wiley C</h2>
 
             <img src="assets/unnamed.png" alt="" />
             <p>
@@ -373,7 +223,61 @@ margin-top: 5px;
           </div>
         </div>
       </div>
-      <div class="footer">lorem</div>
+
+
+    
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-about-header">
+          <div class="footer-icon-space">
+            <img src="" alt="Puzzle Bus Logo">
+          </div>
+          <h4>Puzzle Bus</h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="YouTube">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Reddit">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="pages/busline.html">Bus Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </body>
+
+    <div class="footer-bottom">
+      &copy; 2025 Puzzle Bus.
+    </div>
+  </footer>
+    
+</body>
 </html>
