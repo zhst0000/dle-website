@@ -47,10 +47,6 @@
      stroke-width: 4;
      fill: #fff;
      transition: fill 0.3s ease;
-     opacity: 0;
-    }
-    .station.visible {
-      opacity: 1;
     }
     .carousel {
       position: relative;
@@ -417,15 +413,13 @@
           path.style.strokeDashoffset = offset;
 
           const drawn = pathLength - offset;
-stations.forEach(station => {
-  if (drawn >= station._triggerLength) {
-    station.classList.add('visible');
-    station.style.fill = '#ff5722';
-  } else {
-    station.classList.remove('visible');
-    station.style.fill = '#fff';
-  }
-});
+          stations.forEach(station => {
+            if (drawn >= station._triggerLength) {
+              station.style.fill = '#ff5722';
+            } else {
+              station.style.fill = '#fff';
+            }
+          });
 
           ticking = false;
         });

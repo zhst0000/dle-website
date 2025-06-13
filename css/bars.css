@@ -9,7 +9,7 @@
         0 6px 12px rgba(0,0,0,0.12);  
     }
 
-    .station {
+    .category {
       display: flex;
       align-items: center;
       margin: 60px 0;
@@ -33,7 +33,7 @@
       z-index: 2;
     }
 
-    .category {
+    .category-title {
       font-size: 1.3em;
       font-weight: bold;
       margin-left: 40px;
