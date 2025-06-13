@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Puzzle Bus – Front Page</title>
-  <link rel="stylesheet" href="css/palette.css"/>
-  <link rel="stylesheet" href="css/elements.css"/> 
+  <link rel="stylesheet" href="src/css/palette.css"/>
+  <link rel="stylesheet" href="src/css/elements.css"/> 
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -110,70 +110,70 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 12px;
     }
-.article-card {
-  position: relative;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-.article-card:hover {
-  transform: translateY(-4px);
-}
-.article-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-.article-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.6);
-  color: #222;
-  padding: 12px 16px;
-  transition: all 0.5s ease;
-  max-height: 80px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
-}
+    .article-card {
+      position: relative;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+    }
+    .article-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.6);
+      color: #222;
+      padding: 12px 16px;
+      transition: all 0.5s ease;
+      max-height: 80px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
 
-.article-card:hover .article-content {
-  max-height: 200px;
-  background: rgba(255, 255, 255, 0.95);
-}
-.article-content .category {
+    .article-card:hover .article-content {
+      max-height: 200px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .article-content .category {
       font-size: 12px; font-weight: 700;
       text-transform: uppercase;
-      color: #555;
-}
-.article-content .meta {
+        color: #555;
+    }
+    .article-content .meta {
       font-size: 12px; color: #999;
       text-transform: uppercase;
-}
+    }
 
-.article-content h3 {
-  font-size: 18px;
-  margin-bottom: 2px;
-}
-.article-content p {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #444;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    .article-content h3 {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+    .article-content p {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #444;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-.article-card:hover .article-content p {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .article-card:hover .article-content p {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
 
     @media (max-width: 600px) {
@@ -417,15 +417,16 @@
           path.style.strokeDashoffset = offset;
 
           const drawn = pathLength - offset;
-stations.forEach(station => {
-  if (drawn >= station._triggerLength) {
-    station.classList.add('visible');
-    station.style.fill = '#ff5722';
-  } else {
-    station.classList.remove('visible');
-    station.style.fill = '#fff';
-  }
-});
+
+    stations.forEach(station => {
+     if (drawn >= station._triggerLength) {
+       station.classList.add('visible');
+       station.style.fill = '#ff5722';
+      } else {
+        station.classList.remove('visible');
+        station.style.fill = '#fff';
+      }
+    });
 
           ticking = false;
         });
