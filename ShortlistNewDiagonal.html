@@ -15,11 +15,12 @@
       line-height: 1.5;
       color: #222;
       background: #f5f5f5;
+      
     }
 
     .main {
        
-        background-color: rgb(216, 217, 218);
+       
         overflow-x: hidden;
         padding-top: 20px;
         padding-bottom: 1px;
@@ -37,7 +38,7 @@
         background-color: rgb(252, 232, 208);
         padding: 20px;
         border-radius: 25px;
-        margin-top: 65px;
+        margin-top: 0px;
         margin-left: 20px;
         margin-bottom: 30px;
         margin-right: 20px;
@@ -47,7 +48,6 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
           rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         border: 1px solid rgb(250, 201, 141);
-       
        
       }
 
@@ -83,7 +83,7 @@
 
       .subcategory-design img {
         height: 50px;
-
+      
         position: relative;
         top: 18px;
       }
@@ -100,25 +100,26 @@
         width: 75px;
         z-index: 1;
         position: absolute;
-        left: 70px;
-        top: 260px;
+        left: 40px;
+        bottom: 40px;
       }
 
       .category-design {
         position: absolute;
         width: 50px;
-        height: 100px;
-        left: 82.5px;
-        top: 212px;
+        height: 150px;
+        left: 107.5px;
+        top: 166px;
         z-index: 1;
+        rotate: 45deg;
       }
 
       .category-design-horizontal {
         position: absolute;
         height: 50px;
-        width: calc(100% - 250px);
+        width: calc(100% - 303px);
         top: 164px;
-        left: 131.5px;
+        left: 186.5px;
       }
       .category-design-curve {
         position: absolute;
@@ -127,7 +128,7 @@
         border-radius: 100%;
         clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0% 100%);
         top: 164px;
-        left: 82.5px;
+        left: 142.5px;
         rotate: 90deg;
       }
       .geography-design {
@@ -154,8 +155,6 @@
 
       .category-holder {
         overflow-x: scroll;
-        position: relative;
-    
         
       }
 
@@ -233,26 +232,30 @@
 
 .title{
     display: inline-block;
-    position: absolute;
-    background-color: rgb(252, 232, 208);
-    border: 1px solid rgb(250, 201, 141);
+    writing-mode: sideways-lr;
     font-size: 40px;
     font-weight: bold;
     text-align: right;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 15px;
-    overflow: visible;
-z-index: 1;
-   left: 20px;
-   top: -20px;
-   padding-bottom: 50px;
-   border-radius: 25px;
-   padding-left: 30px;
-   padding-right: 30px;
-   clip-path: polygon(0 0, 100% 0, 100% 66px, 0% 86px );
+    position: relative;
+    rotate: 45deg;
+    left: 50px;
+    top: -10px;
+    
+   
 }
+.category mark{
+/* background-color: rgb(250, 224, 191); */
+background-color: #377eb800;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 0px;
+border-radius: 8px;
+text-decoration: underline;
 
+}
 
 
   </style>
@@ -286,18 +289,17 @@ z-index: 1;
         </div>
 
         <div class="category-holder" id="geography">
-            <div class="title">Geography</div>
           <div class="category">
             <div class="category-design-horizontal geography-design"></div>
             <div class="category-design-curve geography-design"></div>
-            
+            <div class="title"><mark>Geography</mark></div>
             <div class="category-title">
               
               <div class="category-design geography-design"></div>
 
               <img src="assets/geography-icon.png" alt="" />
             </div>
-            <div class="subcategory">
+            <div class="subcategory" style="margin-left: 0;">
               <img class="game-logo" src="assets/timegussr-logo.svg" alt="" />
               <h2>Best in Class</h2>
               <div class="subcategory-design">
