@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle Bus – Front Page</title>
+  <link rel="stylesheet" href="css/palette.css"/>
+  <link rel="stylesheet" href="css/elements.css"/> 
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f5f5f5;
+    }
+    .main {
+        grid-area: main;
+        background-color: rgb(245, 245, 245);
+        overflow-x: scroll;
+        padding: 1px;
+        position: relative;
+        
+      }
+
+    
+      .servicesContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 30px;
+      }
+
+      .aboutContainer {
+        position: relative;
+        width: 1000px;
+        border: 2px solid rgb(246, 209, 163) ;
+        background-color: rgb(252, 238, 221);
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .aboutContainer > p {
+        text-align: center;
+      }
+      .aboutContainer h1 {
+        margin: 0;
+      }
+      .service {
+        margin: 5px;
+        border-radius: 0px;
+       background-color: rgba(246, 209, 163, 0.17);
+       padding: 15px;
+      }
+.service h2{
+
+    text-align: center;
+}
+      .bioContainer {
+        
+        padding: 1px;
+
+        width: 100%;
+      }
+.bioOdd{
+    display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas: "name name" "picture text";
+}
+.bioEven{
+
+        display: grid;
+        grid-template-columns: 1fr 150px;
+        grid-template-areas: "name name" "text picture";
+
+      }
+
+      .bioContainer h2 {
+        grid-area: name;
+      }
+      .bioContainer img {
+        grid-area: picture;
+        width: 150px;
+      }
+      .bioContainer p {
+        grid-area: text;
+        
+      }
+
+
+     
+      .bioOdd p{
+margin-left: 20px;
+margin-top: 5px;
+      }
+
+
+      .bioEven h2{
+text-align: right;
+      }
+
+ .bioEven p{
+margin-right: 20px;
+margin-top: 5px;
+      }
+
+.aboutContainer > h2{
+    margin: 0; 
+    text-align: center;
+  
+    padding-top: 15px;
+}
+      
+      
+  </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+          <a href="#" class="logo">Puzzle Bus</a>
+          <nav class="site-nav">
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="pages/busline.html">Bus Line</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+
+
+
+
+
+      <div class="main">
+        <div class="aboutContainer">
+          <h1>A Home for Puzzle Lovers</h1>
+          <p>
+            Created by two friends and puzzle enthusiasts, Puzzle Bus, in its
+            current form, is a space for the aggregation, review, and discussion
+            of our favorite daily games. Our goal for this project is to create
+            a shared hub for fellow lovers of daily games where we can play and
+            discuss our favorite games.
+          </p>
+          <div class="servicesContainer">
+            <div class="service">
+              <h2>The Shortlist</h2>
+              <p>
+                &emsp;&emsp;The culmination of our many hours spent playing,
+                reviewing, and rating scores of daily games, the shortlist is
+                designed to help daily game players quickly find the best games
+                in the categories that interest them.
+              </p>
+            </div>
+            <div class="service">
+              <h2>Reviews</h2>
+              <p>
+                &emsp;&emsp;Reviews represent the leading written long-form
+                content on puzzle bus as it exists today. The goal of the
+                reviews is to justify our evaluations of the various rated games
+                on our website.
+              </p>
+            </div>
+
+            <div class="service">
+              <h2>Weekly Highlights</h2>
+              <p>
+                &emsp;&emsp;The weekly highlights are the first step of our goal
+                to foster a community of people with a similar interest in these
+                games. We see these as a starting point for a wider conversation
+                about the community or simply a discussion about an individual
+                puzzle or clue.
+              </p>
+            </div>
+          </div> </div> <div class="aboutContainer">
+          <h2>The Team</h2>
+          <div class="bioContainer bioOdd">
+            <h2>Steven Z</h2>
+
+            <img src="assets/unnamed.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem necessitatibus atque voluptatum quas repellat dolorem
+              quos veritatis fugiat. Animi, corrupti totam. Aut tenetur
+              assumenda nisi placeat omnis cumque ullam a ipsum culpa molestiae
+              quibusdam, illo quam nulla. Doloribus voluptatum ipsum adipisci
+              eveniet, est magnam ab velit tenetur assumenda rem sit porro animi
+              iusto explicabo quisquam nostrum dicta, laboriosam suscipit non
+              nesciunt minus odit! Soluta molestias placeat hic quis animi
+              possimus suscipit architecto iure cumque officiis iste illo
+              impedit ipsam officia inventore perferendis optio distinctio,
+              deserunt tenetur nesciunt itaque vel magnam. Aliquam, unde!
+              Ratione tenetur doloremque, delectus dignissimos quisquam aliquam?
+              Rem?
+            </p>
+          </div>
+          <div class="bioContainer bioEven">
+            <h2>Wiley C</h2>
+
+            <img src="assets/unnamed.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem necessitatibus atque voluptatum quas repellat dolorem
+              quos veritatis fugiat. Animi, corrupti totam. Aut tenetur
+              assumenda nisi placeat omnis cumque ullam a ipsum culpa molestiae
+              quibusdam, illo quam nulla. Doloribus voluptatum ipsum adipisci
+              eveniet, est magnam ab velit tenetur assumenda rem sit porro animi
+              iusto explicabo quisquam nostrum dicta, laboriosam suscipit non
+              nesciunt minus odit! Soluta molestias placeat hic quis animi
+              possimus suscipit architecto iure cumque officiis iste illo
+              impedit ipsam officia inventore perferendis optio distinctio,
+              deserunt tenetur nesciunt itaque vel magnam. Aliquam, unde!
+              Ratione tenetur doloremque, delectus dignissimos quisquam aliquam?
+              Rem?
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-about-header">
+          <div class="footer-icon-space">
+            <img src="" alt="Puzzle Bus Logo">
+          </div>
+          <h4>Puzzle Bus</h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="YouTube">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Reddit">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="pages/busline.html">Bus Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Puzzle Bus.
+    </div>
+  </footer>
+    
+</body>
+</html>
