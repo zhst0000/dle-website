@@ -1,4 +1,25 @@
 :root {
+
+
+  /* -- Theme Colors */
+
+
+
+
+  --color-nav-hover-1:    #E51937;
+
+  --color-nav-hover-2:    #00A650;
+ 
+ --color-nav-hover-3:    #FFD800;
+--color-nav-hover-4:    #0072CE;
+
+--theme-color-purple: #984EA3;
+--theme-color-orange:#FF7F00;
+--theme-color-7: #B66E41;
+
+
+
+
     /* -- Page & Text */
     --color-bg-page:        #f5f5f5;
     --color-text-primary:   #222;
@@ -9,13 +30,13 @@
     --color-logo:           #111;
     --color-nav-link:       #111;
     --color-nav-hover-bg-1: rgba(229,25,55,0.1);
-    --color-nav-hover-1:    #E51937;
+  
     --color-nav-hover-bg-2: rgba(0,166,80,0.1);
-    --color-nav-hover-2:    #00A650;
+  
     --color-nav-hover-bg-3: rgba(255,216,0,0.1);
-    --color-nav-hover-3:    #FFD800;
+  
     --color-nav-hover-bg-4: rgba(0,114,206,0.1);
-    --color-nav-hover-4:    #0072CE;
+   
   
     /* -- Articles */
     --color-article-bg:     #fff;
@@ -30,5 +51,8 @@
   
     /* -- Overlays & misc */
     --gradient-carousel-overlay: linear-gradient(transparent, rgba(0,0,0,0.6));
+
+
+
   }
   
