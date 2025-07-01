@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Puzzle Bus – Front Page 1</title>
-  <link rel="stylesheet" href="../src/css/main.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Puzzle Bus – Front Page 1</title>
+    <link rel="stylesheet" href="../src/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+        color: #222;
+        background: #f5f5f5;
+      }
 
-
-
-
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      line-height: 1.5;
-      color: #222;
-      background: #f5f5f5;
-      
-    }
-
-    .main {
-       
-       
+      .main {
         overflow-x: hidden;
         padding-top: 20px;
         padding-bottom: 1px;
         padding-left: 1px;
         padding-right: 30px;
         position: relative;
-     
+
         line-height: 1;
       }
       .main > h1 {
         margin-left: 20px;
-       
-        
       }
-
-  
 
       .category {
         background-color: rgb(252, 232, 208);
@@ -59,7 +57,6 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
           rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         border: 1px solid rgb(250, 201, 141);
-       
       }
 
       .category:hover {
@@ -67,16 +64,11 @@
           rgba(0, 0, 0, 0.22) 0px 10px 10px;
       }
 
-      
-
-      
-
       img.game-logo {
         width: 200px;
         height: 80px;
         object-fit: contain;
         margin-bottom: 20px;
-        
       }
 
       .subcategory {
@@ -96,7 +88,7 @@
 
       .subcategory-design img {
         height: 50px;
-      
+
         position: relative;
         top: 18px;
       }
@@ -105,7 +97,6 @@
         vertical-align: top;
         width: 175px;
         text-align: center;
-       
       }
 
       .category-title img {
@@ -183,7 +174,6 @@
 
       .category-holder {
         overflow-x: scroll;
-        
       }
 
       .jumpbar a {
@@ -257,402 +247,396 @@
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
-      
 
-.title{
-    display: inline-block;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: right;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    position: absolute;
-    
-    transform: rotate(-45deg);
-    left: 66px;
-    top: 177px;
-    transform-origin: 0% 100%;
-    
-   
-}
-.category mark{
-/* background-color: rgb(250, 224, 191); */
-background-color: #377eb800;
-padding-top: 10px;
-padding-bottom: 10px;
-padding-right: 10px;
-padding-left: 0px;
-border-radius: 8px;
-text-decoration: underline;
-font-family: 'Alfa Slab One', serif; 
-font-weight: 400;
+      .title {
+        display: inline-block;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: absolute;
 
-}
-.content-title-design{
-  height: 1px;
-  width: 430px;
-  background-color: black;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
+        transform: rotate(-45deg);
+        left: 66px;
+        top: 177px;
+        transform-origin: 0% 100%;
+      }
+      .category mark {
+        /* background-color: rgb(250, 224, 191); */
+        background-color: #377eb800;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 0px;
+        border-radius: 8px;
+        text-decoration: underline;
+        font-family: "Alfa Slab One", serif;
+        font-weight: 400;
+      }
+      .content-title-design {
+        height: 1px;
+        width: 430px;
+        background-color: black;
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
-
-
-<body>
+  <body>
     <header>
-        <div class="container">
-          <a href="#" class="logo">Puzzle Bus</a>
-          <nav class="site-nav">
-            <ul>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="pages/busline.html">Bus Line</a></li>
-              <li><a href="pages/about.html">About</a></li>
-              <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <div class="container">
+        <a href="#" class="logo">Puzzle Bus</a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="pages/busline.html">Bus Line</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-      <div class="main">
-        <div id="rightfade"></div>
-        <h1 class="main-title">The Shortlist</h1>
-        <h2>Our Favorite Games by Category</h2>
-        <div class="content-title-design"></div>
-        <div class="jumpbar">
-          <h3>Jump:</h3>
-          <a href="#geography">Geography</a><a href="#film">Movies</a
-          ><a href="#film">Trivia</a><a href="#film">Words</a
-          ><a href="#film">Sports</a>
-        </div>
-
-        <div class="category-holder" id="geography">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Geography</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/juxtastat.png" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>Juxtastat</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/travle.png" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>Travle</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/FoodGussr.png" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>FoodGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/geogrid.svg" alt="" />
-              <h2>Best Grid Game</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>Geogrid</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/unzoomed2.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>Unzoomed</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="category-holder" id="film">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Movies</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-
-        <div class="category-holder" id="music">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Music</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="category-holder" id="trivia">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Trivia</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="category-holder" id="sports">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Sports</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="category-holder" id="words">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Words</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="category-holder" id="misc">
-          <div class="category">
-            <div class="category-design-horizontal colored-design"></div>
-            <div class="category-design-curve colored-design"></div>
-            <div class="title"><mark>Misc</mark></div>
-            <div class="category-title">
-              
-              <div class="category-design colored-design"></div>
-
-              <img src="ShortlistAssets/geography-icon.png" alt="" />
-            </div>
-            <div class="subcategory" >
-              <img class="game-logo" src="ShortlistAssets/timegussr-logo.svg" alt="" />
-              <h2>Best in Class</h2>
-              <div class="subcategory-design">
-                <img src="ShortlistAssets/Stop icon.png" alt="" />
-              </div>
-              <h3>TimeGuessr</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                deleniti a voluptates assumenda animi doloremque nemo quo
-                distinctio facilis eaque?
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-    
-        
-
-
-
-
-
-
+    <div class="main">
+      <div id="rightfade"></div>
+      <h1 class="main-title">The Shortlist</h1>
+      <h2>Our Favorite Games by Category</h2>
+      <div class="content-title-design"></div>
+      <div class="jumpbar">
+        <h3>Jump:</h3>
+        <a href="#geography">Geography</a><a href="#film">Movies</a
+        ><a href="#film">Trivia</a><a href="#film">Words</a
+        ><a href="#film">Sports</a>
       </div>
 
+      <div class="category-holder" id="geography">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Geography</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
 
-<footer>
-    <div class="footer-container">
-      <div class="footer-about">
-        <div class="footer-about-header">
-          <div class="footer-icon-space">
-            <img src="" alt="Puzzle Bus Logo">
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
           </div>
-          <h4>Puzzle Bus</h4>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+          <div class="subcategory">
+            <img class="game-logo" src="ShortlistAssets/juxtastat.png" alt="" />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>Juxtastat</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+          <div class="subcategory">
+            <img class="game-logo" src="ShortlistAssets/travle.png" alt="" />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>Travle</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+          <div class="subcategory">
+            <img class="game-logo" src="ShortlistAssets/FoodGussr.png" alt="" />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>FoodGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+          <div class="subcategory">
+            <img class="game-logo" src="ShortlistAssets/geogrid.svg" alt="" />
+            <h2>Best Grid Game</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>Geogrid</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
 
-        <div class="footer-social">
-          <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="YouTube">
-          </a>
-          <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="Reddit">
-          </a>
-          <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="Instagram">
-          </a>
+          <div class="subcategory">
+            <img class="game-logo" src="ShortlistAssets/unzoomed2.svg" alt="" />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>Unzoomed</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="footer-column">
-        <h4>Nav</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="pages/busline.html">Bus Line</a></li>
-        </ul>
+      <div class="category-holder" id="film">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Movies</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="footer-column">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">User Data</a></li>
-          <li><a href="#">Acknowledgements</a></li>
-        </ul>
+
+      <div class="category-holder" id="music">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Music</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="footer-column">
-        <h4>Other</h4>
-        <ul>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
+
+      <div class="category-holder" id="trivia">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Trivia</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-holder" id="sports">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Sports</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-holder" id="words">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Words</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-holder" id="misc">
+        <div class="category">
+          <div class="category-design-horizontal colored-design"></div>
+          <div class="category-design-curve colored-design"></div>
+          <div class="title"><mark>Misc</mark></div>
+          <div class="category-title">
+            <div class="category-design colored-design"></div>
+
+            <img src="ShortlistAssets/geography-icon.png" alt="" />
+          </div>
+          <div class="subcategory">
+            <img
+              class="game-logo"
+              src="ShortlistAssets/timegussr-logo.svg"
+              alt=""
+            />
+            <h2>Best in Class</h2>
+            <div class="subcategory-design">
+              <img src="ShortlistAssets/Stop icon.png" alt="" />
+            </div>
+            <h3>TimeGuessr</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              deleniti a voluptates assumenda animi doloremque nemo quo
+              distinctio facilis eaque?
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      &copy; 2025 Puzzle Bus.
-    </div>
-  </footer>
-    
-</body>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-about-header">
+            <div class="footer-icon-space">
+              <img src="" alt="Puzzle Bus Logo" />
+            </div>
+            <h4>Puzzle Bus</h4>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+          <div class="footer-social">
+            <a href="#" target="_blank" rel="noopener">
+              <img src="assets/unnamed.png" alt="YouTube" />
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <img src="assets/unnamed.png" alt="Reddit" />
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <img src="assets/unnamed.png" alt="Instagram" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Nav</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="pages/busline.html">Bus Line</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">User Data</a></li>
+            <li><a href="#">Acknowledgements</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Other</h4>
+          <ul>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
+    </footer>
+  </body>
 </html>
