@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/main.css" />
+    <style>
+        body{
+            background-color: var(--color-bg-header);
+
+        }
+      .roadmap {
+        position: relative;
+      }
+      .logo-title {
+        display: flex;
+      }
+      h1 {
+        margin-left: 80px;
+      }
+      h2 {
+        margin: 0;
+        
+      }
+      h3 {
+        margin: 0;
+        color: rgb(111, 111, 111);
+      }
+      .logo {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      .path-design {
+        --bottom-distance: 530px;
+        position: absolute;
+        background-color: var(--color-nav-hover-1);
+        height: calc(100% - 120px);
+        width: 54px;
+        clip-path: polygon(
+          0% 0%,
+          100% 0%,
+          100% 5px,
+          55% 5px,
+          55% var(--bottom-distance),
+          100% var(--bottom-distance),
+          100% 100%,
+          0% 100%,
+          0% var(--bottom-distance),
+          45% var(--bottom-distance),
+          45% 5px,
+          0% 5px
+        );
+        left: 22px;
+      }
+
+      .roadmap-item {
+        
+        margin-left: 120px;
+        position: relative;
+        border: 2px solid var(--color-bg-footer);
+        width: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .item-design {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        background-color: var(--color-nav-hover-1);
+        clip-path: circle();
+        left: -85px;
+        top: 36px;
+      }
+
+      p {
+        max-width: 200px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="roadmap">
+      <div class="logo-title">
+        <img class="logo" src="/assets/unnamed.png" alt="" />
+        <h1>Roadmap</h1>
+      </div>
+      <div class="path-design"></div>
+      <div class="roadmap-item" style="margin-top: 0px">
+        <div class="item-design"></div>
+        <h2>Short-form Video Content</h2>
+        <h3>mm/dd/yy</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          numquam.
+        </p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>Short-form Video Content</h2>
+        <h3>mm/dd/yy</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          numquam.
+        </p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>Short-form Video Content</h2>
+        <h3>mm/dd/yy</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          numquam.
+        </p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>Short-form Video Content</h2>
+        <h3>mm/dd/yy</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          numquam.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
