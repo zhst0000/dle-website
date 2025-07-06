@@ -1,5 +1,5 @@
 header {
-    background: var(--color-bg-header);
+    background: var(--color-theme-bone-200);
     border-radius: 16px;
     box-shadow: 0 8px 24px var(--color-header-shadow);
     position: sticky;
@@ -7,24 +7,23 @@ header {
     z-index: 1000;
   }
   .header-container {
-    max-width: 960px;
     margin: 0 auto;
-    padding: 0 24px;
     height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Space between logo and title */
-}
+    padding-left: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+  }
 
-.header-logo {
-  height: 40px; /* Adjust size as needed */
-  width: auto;
-}
+  .header-logo {
+    height: 40px; 
+    width: auto;
+  }
 
   .header-title {
     font-family: var(--header-font-title);
@@ -32,48 +31,45 @@ header {
     font-weight: 800;
     color: var(--color-logo);
   }
-.header-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 16px; /* Adjust spacing as needed */
-  margin: 0;
-  padding: 0;
-}
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    padding-right: 120px;
+  }
 
-/* Base style for nav buttons */
-.header-nav a {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff; 
-  padding: 8px 16px;
-  border-radius: 999px; 
-  transition: background-color 0.2s ease;
-  text-decoration: none;
-}
-.header-nav .btn-1 {
-  background-color: #E63946; 
-}
-.header-nav .btn-2 {
-  background-color: #457B9D; 
-}
-.header-nav .btn-3 {
-  background-color: #2A9D8F; 
-}
-.header-nav .btn-4 {
-  background-color: #A855F7; 
-}
-
-/* Darken on hover */
-.header-nav .btn-1:hover {
-  background-color: #C82333;
-}
-.header-nav .btn-2:hover {
-  background-color: #355C7D;
-}
-.header-nav .btn-3:hover {
-  background-color: #1E7A69;
-}
-.header-nav .btn-4:hover {
-  background-color: #7C3AED;
-}
+  .header-nav a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff; 
+    padding: 8px 16px;
+    border-radius: 999px; 
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+  }
+  .header-nav .btn-1 {
+    background-color: var(--color-theme-red-400); 
+  }
+  .header-nav .btn-2 {
+    background-color: var(--color-theme-blue-400); 
+  }
+  .header-nav .btn-3 {
+    background-color: var(--color-theme-green-400); 
+  }
+  .header-nav .btn-4 {
+    background-color: var(--color-theme-purple-400); 
+  }
+  /* Darken on hover */
+  .header-nav .btn-1:hover {
+    background-color: var(--color-theme-red-600);
+  }
+  .header-nav .btn-2:hover {
+    background-color: var(--color-theme-blue-600);
+  }
+  .header-nav .btn-3:hover {
+    background-color: var(--color-theme-green-600);
+  }
+  .header-nav .btn-4:hover {
+    background-color: var(--color-theme-purple-600);
+  }

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tag Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: white;
+    }
+
+    #search-bar {
+      display: block;
+      margin: 1rem auto;
+      width: 60%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    #tag-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag-button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .tag-button.active {
+      background: darkred;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .card {
+      background: bisque;
+      border: 1px solid gray;
+      border-radius: 8px;
+      width: 300px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .tags {
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: darkgray;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+    }
+
+    .no-results {
+      text-align: center;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="search-bar" placeholder="Search articles by text...">
+
+  <div id="tag-buttons">
+  </div>
+
+<!-- REFERENCE: https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes -->
+  <div class="cards-container" id="cards-container">
+    <div class="card" data-tags="review geography">
+      <h2>Article 1</h2>
+      <p>Article 1 content</p>
+      <div class="tags">
+        <span class="tag">Review</span>
+        <span class="tag">Geography</span>
+      </div>
+    </div>
+    <div class="card" data-tags="review trivia">
+      <h2>Article 2</h2>
+      <p>BURGLE BURGLE BURGLE</p>
+      <div class="tags">
+        <span class="tag">Review</span>
+        <span class="tag">Geography</span>
+      </div>
+    </div>
+    <div class="card" data-tags="report geography">
+      <h2>Article 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <div class="tags">
+        <span class="tag">Report</span>
+        <span class="tag">Geography</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="no-results" style="display:none;">No articles found.</div>
+
+  <script>
+    const searchBar = document.getElementById('search-bar');
+    const cards = document.querySelectorAll('.card');
+    const noResults = document.getElementById('no-results');
+    const tagButtonsContainer = document.getElementById('tag-buttons');
+
+    let activeTag = '';
+
+    // Collect unique tags
+    const tagsSet = new Set();
+    cards.forEach(card => {
+      card.dataset.tags.split(' ').forEach(tag => tagsSet.add(tag));
+    });
+
+    // Generate "All" button
+     const allButton = document.createElement('button');
+    allButton.textContent = 'All';
+    allButton.className = 'tag-button active'; // Active by default
+    tagButtonsContainer.appendChild(allButton);
+
+    allButton.addEventListener('click', () => {
+      activeTag = '';
+      document.querySelectorAll('.tag-button').forEach(btn => btn.classList.remove('active'));
+      allButton.classList.add('active');
+      filterCards();
+    });
+
+    // Generate tag buttons
+    tagsSet.forEach(tag => {
+      const button = document.createElement('button');
+      button.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+      button.className = 'tag-button';
+      button.dataset.tag = tag;
+      tagButtonsContainer.appendChild(button);
+
+      button.addEventListener('click', () => {
+        if (activeTag === tag) {
+          // Deselect tag if same one clicked
+          activeTag = '';
+          button.classList.remove('active');
+        } else {
+          // Deselect other buttons
+          document.querySelectorAll('.tag-button').forEach(btn => btn.classList.remove('active'));
+          activeTag = tag;
+          button.classList.add('active');
+        }
+        filterCards();
+      });
+    });
+
+    //Handle filtering
+    function filterCards() {
+      const query = searchBar.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const title = card.querySelector('h2').textContent.toLowerCase();
+        const content = card.querySelector('p').textContent.toLowerCase();
+        const tags = card.dataset.tags;
+
+        const matchesQuery = query === '' || title.includes(query) || content.includes(query);
+        const matchesTag = activeTag === '' || tags.includes(activeTag);
+
+        if (matchesQuery && matchesTag) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchBar.addEventListener('input', filterCards);
+  </script>
+</body>
+</html>

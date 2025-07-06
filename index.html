@@ -20,37 +20,6 @@
       margin: 0 auto;
       padding: 24px 32px;
     }
-
-    #subway-svg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 100vh;
-    pointer-events: none;
-    z-index: -1;
-    overflow: visible;
-    }
-
-    #subway-path {
-      fill: none;
-      stroke: #ff5722;
-      stroke-width: 6;
-      stroke-linecap: round;
-      stroke-dasharray: 0;
-      stroke-dashoffset: 0;
-    }
-
-    .station {
-     stroke: #ff5722;
-     stroke-width: 4;
-     fill: #fff;
-     transition: fill 0.3s ease;
-     opacity: 0;
-    }
-    .station.visible {
-      opacity: 1;
-    }
     .carousel {
       position: relative;
       margin-bottom: 32px;
@@ -185,32 +154,63 @@
         height: 160px;
       }
     }
+            .scroll-node {
+          stroke: #ff5722;
+          stroke-width: 4;
+          fill: #fff;
+          transition: fill 0.3s ease;
+          opacity: 0;
+          }
+        .scroll-node.visible {
+          opacity: 1;
+        }
+        #scroll-node-svg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            overflow: visible;
+        }
+        #scroll-line-svg {
+          fill: none;
+          stroke: #ff5722;
+          stroke-width: 6;
+          stroke-linecap: round;
+          stroke-dasharray: 0;
+          stroke-dashoffset: 0;
+        }
   </style>
 </head>
 
 
 <body>
     <header>
-        <div class="container">
-          <a href="#" class="logo">Puzzle Bus</a>
-          <nav class="site-nav">
-            <ul>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="pages/busline.html">Bus Line</a></li>
-              <li><a href="pages/about.html">About</a></li>
-              <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-          </nav>
+      <div class="header-container">
+        <div class="header-left">
+        <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
+        <a href="../index.html" class="header-title">Puzzle Bus</a>
         </div>
-      </header>
-  <svg id="subway-svg" viewBox="0 0 200 1000" preserveAspectRatio="xMaxYMin slice">
-    <path id="subway-path" d="M100,0 L100,1000" />
-    <circle class="station" cx="100" cy="150" r="12" data-pos="150"/>
-    <circle class="station" cx="100" cy="350" r="12" data-pos="350"/>
-    <circle class="station" cx="100" cy="600" r="12" data-pos="600"/>
-    <circle class="station" cx="100" cy="850" r="12" data-pos="850"/>
-  </svg>
-      
+        <nav class="header-nav">
+          <ul>
+        <li><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
+        <li><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
+        <li><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
+        <li><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+        <svg id="scroll-node-svg" viewBox="0 0 200 1000" preserveAspectRatio="xMaxYMin slice">
+      <path id="scroll-line-svg" d="M100,0 L100,1000" />
+      <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
+      <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
+      <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
+      <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
+    </svg> 
 
       <div class="news-container">
         <div class="carousel" id="featuredCarousel">
@@ -349,13 +349,13 @@
 
         <div class="footer-social">
           <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="YouTube">
+            <img src="../assets/unnamed.png" alt="YouTube">
           </a>
           <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="Reddit">
+            <img src="../assets/unnamed.png" alt="Reddit">
           </a>
           <a href="#" target="_blank" rel="noopener">
-            <img src="assets/unnamed.png" alt="Instagram">
+            <img src="../assets/unnamed.png" alt="Instagram">
           </a>
         </div>
       </div>
@@ -388,54 +388,57 @@
       &copy; 2025 Puzzle Bus.
     </div>
   </footer>
-    
+
+
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const path = document.getElementById('subway-path');
-    const stations = Array.from(document.querySelectorAll('.station'));
+    document.addEventListener('DOMContentLoaded', () => {
+      const line = document.getElementById('scroll-line-svg');
+      const nodes = Array.from(document.querySelectorAll('.scroll-node'));
 
-    const pathLength = path.getTotalLength();
-    path.style.strokeDasharray = pathLength;
-    path.style.strokeDashoffset = pathLength;
+      const length = line.getTotalLength();
+      line.style.strokeDasharray = length;
+      line.style.strokeDashoffset = length;
 
-    const viewBoxHeight = 1000;
-    stations.forEach(station => {
-      const y = parseFloat(station.getAttribute('data-pos'));
-      station._triggerLength = (y / viewBoxHeight) * pathLength;
-    });
+      const viewBoxHeight = 1000;
+      nodes.forEach(node => {
+        const y = parseFloat(node.getAttribute('data-pos'));
+        node._triggerLength = (y / viewBoxHeight) * length;
+      });
 
-    let ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
 
-          const offset = pathLength * (1 - progress);
-          path.style.strokeDashoffset = offset;
+            const offset = length * (1 - progress);
+            line.style.strokeDashoffset = offset;
 
-          const drawn = pathLength - offset;
+            const drawn = length - offset;
 
-    stations.forEach(station => {
-     if (drawn >= station._triggerLength) {
-       station.classList.add('visible');
-       station.style.fill = '#ff5722';
-      } else {
-        station.classList.remove('visible');
-        station.style.fill = '#fff';
+            nodes.forEach(node => {
+              if (drawn >= node._triggerLength) {
+                node.classList.add('visible');
+                node.style.fill = '#ff5722';
+              } 
+              else {
+                node.classList.remove('visible');
+                node.style.fill = '#fff';
+              }
+            });
+
+            ticking = false;
+          });
+          
+          ticking = true;
+        }
       }
+
+      window.addEventListener('scroll', onScroll);
+      onScroll();
     });
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  });
 </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--color-bg-footer);
+    background-color: var(--color-theme-bone-600);
     color: var(--color-text-footer);
     padding: 40px 24px;
   }
@@ -89,10 +89,7 @@ footer {
     opacity: 0.8;
   }
   
-  /* Footer responsive */
   @media (max-width: 600px) {
     footer { padding: 24px 16px; }
     .footer-about { margin-right: 0; }
   }
-  
-
