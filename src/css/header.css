@@ -89,7 +89,7 @@ header {
   .flairEnd {
    
 
-    background-color: grey;
+    background-color: var(--color-theme-bone-200);
     --flairWidth: 500px;
     --flairWeight: 10px;
     --flairHeight: 50px;
