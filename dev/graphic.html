@@ -5,22 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../src/css/main.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+    rel="stylesheet"
+  />
     <style>
         body{
-            background-color: var(--color-bg-header);
+            background-color: #f5f5f5;
 
         }
       .roadmap {
         position: relative;
+
       }
       .logo-title {
         display: flex;
       }
       h1 {
-        margin-left: 80px;
+        margin-left: 110px;
+        text-align: center;
+        font-family: "Alfa Slab One", serif;
+        text-decoration: none;
       }
       h2 {
         margin: 0;
+        font-weight: lighter;
         
       }
       h3 {
@@ -28,13 +37,14 @@
         color: rgb(111, 111, 111);
       }
       .logo {
-        height: 100px;
-        width: 100px;
-        margin-bottom: 20px;
+        height: 120px;
+        width: 120px;
+        margin-bottom: 0;
+        
       }
 
       .path-design {
-        --bottom-distance: 538px;
+        --bottom-distance: 468px;
         position: absolute;
         background-color: var(--color-nav-hover-1);
         height: calc(100% - 120px);
@@ -54,14 +64,15 @@
           0% 5px
         );
         left: 22px;
+
       }
 
       .roadmap-item {
         
         margin-left: 120px;
         position: relative;
-        border: 2px solid var(--color-bg-footer);
-        width: fit-content;
+        border: 2px solid #b1b2c0;
+        width: 375px;
         padding: 10px;
         border-radius: 10px;
         margin-top: 10px;
@@ -72,56 +83,82 @@
         height: 25px;
         width: 25px;
         background-color: var(--color-nav-hover-1);
-        clip-path: circle();
+        /* clip-path: circle(); */
+        border-radius: 100%;
         left: -85px;
         top: 36px;
       }
 
       p {
-        max-width: 200px;
+        
         margin: 0;
       }
+
+.bigitem{
+  --moveleft: 20px;
+  left: var(--moveleft);
+
+}
+
+.bigitem h2{
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+
+
+.bigitem .item-design{
+
+
+  background-color: #f5f5f5;
+ 
+  border: 5px solid var(--color-nav-hover-1);
+  
+  left:   calc( -90px  - var(--moveleft)       )   /* calc(var(--moveleft) * -1)*/ ;
+  
+}
+
+
     </style>
   </head>
   <body>
     <div class="roadmap">
       <div class="logo-title">
-        <img class="logo" src="/assets/unnamed.png" alt="" />
-        <h1>Roadmap</h1>
+        <img class="logo" src="/assets/placeholderlogo.png" alt="" />
+        <h1>Puzzle Bus <br> <span style="font-size: 24px; text-decoration: underline;">Roadmap</span> </h1>
+        
       </div>
       <div class="path-design"></div>
       <div class="roadmap-item" style="margin-top: 0px">
         <div class="item-design"></div>
-        <h2>Short-form Video Content</h2>
-        <h3>mm/dd/yy</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          numquam.
+        <h2>Weekly Written Reviews</h2>
+        <h3>Starting Today</h3>
+        <p >
+        New written reviews for the daily games we're playing this week; posted every Monday
+        </p>
+      </div>
+      <div class="roadmap-item bigitem">
+        <div class="item-design"></div>
+        <h2>Short-Form Video Content</h2>
+        <h3>This Spetember</h3>
+        <p >
+         New shorts/reels style video format for our reviews; posted regularly
         </p>
       </div>
       <div class="roadmap-item">
         <div class="item-design"></div>
-        <h2>Short-form Video Content</h2>
-        <h3>mm/dd/yy</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          numquam.
+        <h2>New Format for Written Content</h2>
+        <h3>Q3 2025</h3>
+        <p >
+          ...
         </p>
       </div>
-      <div class="roadmap-item">
+      <div class="roadmap-item bigitem">
         <div class="item-design"></div>
-        <h2>Short-form Video Content</h2>
-        <h3>mm/dd/yy</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          numquam.
-        </p>
-      </div>
-      <div class="roadmap-item">
-        <div class="item-design"></div>
-        <h2>Short-form Video Content</h2>
-        <h3>mm/dd/yy</h3>
-        <p>
+        <h2>Deeper Game Integration</h2>
+        <h3>Q4 2025</h3>
+        <p >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
           numquam.
         </p>
