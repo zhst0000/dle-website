@@ -36,6 +36,8 @@ header {
     display: flex;
     gap: 32px;
     padding-right: 120px;
+    position: relative;
+    
   }
 
   .header-nav a {
@@ -48,6 +50,11 @@ header {
     transition: background-color 0.2s ease;
     text-decoration: none;
   }
+
+.nav-btn{
+  z-index: 2;
+}
+
   .header-nav .btn-1 {
     background-color: var(--color-theme-red-400); 
   }
@@ -73,3 +80,75 @@ header {
   .header-nav .btn-4:hover {
     background-color: var(--color-theme-purple-600);
   }
+
+
+  /* nav bar flair related */
+
+
+
+  .flairEnd {
+   
+
+    background-color: grey;
+    --flairWidth: 500px;
+    --flairWeight: 10px;
+    --flairHeight: 50px;
+    --flairBarTop: calc(
+      calc(var(--flairHeight) / 2) - calc(var(--flairWeight) / 2)
+    );
+    --flairBarBottom: calc(
+      calc(var(--flairHeight) / 2) + calc(var(--flairWeight) / 2)
+    );
+    width: var(--flairWidth);
+    height: var(--flairHeight);
+    position: absolute;
+
+    clip-path: polygon(
+      0 0,
+      var(--flairWeight) 0,
+      var(--flairWeight) var(--flairBarTop),
+      var(--flairWidth) var(--flairBarTop),
+      var(--flairWidth) var(--flairBarBottom),
+      var(--flairWeight) var(--flairBarBottom),
+      var(--flairWeight) 100%,
+
+      0 100%
+    );
+
+    top: -4px;
+    z-index: -1;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+  }
+
+ 
+
+  #flair1 {
+    left: -31px;
+  }
+  #flair2 {
+    rotate: 180deg;
+    left: 8px;
+  }
+
+  .header-nav:hover #flair1 {
+    transform: translate(-50px, 0);
+  }
+  .header-nav:hover #flair2 {
+    transform: translate(-50px, 0);
+  }
+
+  .flairitem1:hover ~ .flairEnd {
+    background-color: var(--color-theme-red-600);
+  }
+  .flairitem2:hover ~ .flairEnd {
+    background-color: var(--color-theme-blue-600);
+  }
+  .flairitem3:hover ~ .flairEnd {
+    background-color: var(--color-theme-green-600);
+  }
+  .flairitem4:hover ~ .flairEnd {
+    background-color: var(--color-theme-purple-600);
+  }
+
+
