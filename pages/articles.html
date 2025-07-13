@@ -6,14 +6,26 @@
 
   <link rel="stylesheet" href="../src/css/main.css">
 
+  <link rel="stylesheet" href="../src/css/articlecard.css">
   <title>Articles</title>
 
   <style>
     html, body {
+      height: 100%;
       font-family: var(--article-font-body);
       background: var(--color-theme-cool-200);
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
       flex: 1;
     }
+
     #search-bar {
       display: block;
       margin: 1rem auto;
@@ -23,6 +35,7 @@
       border: 1px solid #999;
       border-radius: 5px;
     }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -30,20 +43,24 @@
       justify-content: center;
       margin-bottom: 2rem;
     }
+
     .filter-group {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .filter-group label {
       margin-bottom: 0.5rem;
       font-weight: bold;
     }
+
     .pills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .pill {
       background: #ddd;
       color: #333;
@@ -52,130 +69,52 @@
       border-radius: 999px;
       cursor: pointer;
     }
+
     .pill.active {
       background: #333;
       color: #fff;
     }
+
     .date-filter {
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* horizontal layout */
       align-items: center;
+      gap: 0.5rem;
+    }
+
+    .date-filter label {
+      margin-bottom: 0; /
     }
     .date-filter select,
     .date-filter input {
-      margin: 4px;
+      margin: 0; /* reset margin */
       padding: 6px;
-    }
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 320px);
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .article-card {
-      position: relative;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .article-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-    .article-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.80);
-        padding: 12px 16px;
-        max-height: 60px; /* collapsed height */
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-    }
-    .article-card:hover .article-content {
-        max-height: 200px; /* expanded height */
-        background: rgba(255,255,255,0.95);
-        transition: max-height 0.8s ease;
-    }
-    .article-content p {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.4s ease
-    }
-    .article-card:hover .article-content p {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .article-content .category {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 6px;
-    }
-    .article-content .category-pill {
-        background: #333;
-        color: #fff;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-    }
-    .article-content h3 {
-      margin: 4px 0;
-      font-size: 18px;
-    }
-    .article-content p {
-      font-size: 14px;
-      margin-top: 8px;
-      color: #444;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .article-card:hover .article-content p {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .article-content .meta {
-      font-size: 12px;
-      color: #999;
-      margin-top: 4px;
     }
     .no-results {
       text-align: center;
       font-style: italic;
       margin-top: 2rem;
-      margin-bottom: 40px;
-      display: flex
     }
   </style>
 </head>
 
 <body>
-    <header>
-      <div class="header-container">
-        <div class="header-head">
+  <header>
+    <div class="header-container">
+      <div class="header-head">
         <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
         <a href="../index.html" class="header-title">Puzzle Bus</a>
-        </div>
-        <nav class="header-nav">
-          <ul>
-            <li><a href="../index.html" class="chip-red">Reviews</a></li>
-            <li><a href="../pages/busline.html" class="chip-blue">Shortlist</a></li>
-            <li><a href="../pages/about.html" class="chip-green">About</a></li>
-            <li><a href="../pages/contact.html" class="chip-purple">Contact</a></li>
-          </ul>
-        </nav>
       </div>
-    </header>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="../index.html" class="chip-red">Reviews</a></li>
+          <li><a href="../pages/busline.html" class="chip-blue">Shortlist</a></li>
+          <li><a href="../pages/about.html" class="chip-green">About</a></li>
+          <li><a href="../pages/contact.html" class="chip-purple">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <input type="text" id="search-bar" placeholder="Search articles...">
 
@@ -201,98 +140,100 @@
     </div>
   </div>
 
-<div class="article-grid" id="cards-container">
-  <article class="article-card" data-tags="type-review genre-geography" data-date="2025-07-01">
-    <img src="../assets/geography.png" alt="Article 1">
-    <div class="article-content">
-      <div class="category">
-        <span class="category-pill">Review</span>
-        <span class="category-pill">Geography</span>
-      </div>
-      <h3>Article 1</h3>
-      <p>Article 1 content lorem ipsum.</p>
-      <div class="meta">2025-07-01</div>
-    </div>
-  </article>
-
-  <article class="article-card" data-tags="type-report genre-trivia" data-date="2025-06-15">
-    <img src="assets/geography.png" alt="Article 2">
-    <div class="article-content">
-      <div class="category">
-        <span class="category-pill">Report</span>
-      </div>
-      <h3>Article 2</h3>
-      <p>BURGLE BURGLE BURGLE</p>
-      <div class="meta">2025-06-15</div>
-    </div>
-  </article>
-
-  <article class="article-card" data-tags="type-review genre-trivia" data-date="2025-05-20">
-    <img src="assets/geography.png" alt="Article 3">
-    <div class="article-content">
-      <div class="category">
-        <span class="category-pill">Review</span>
-      </div>
-      <h3>Article 3</h3>
-      <div class="meta">2025-05-20</div>
-      <p>Lorem ipsum dolor sit amet.</p>
-
-    </div>
-  </article>
-</div>
-
-<div class="no-results" id="no-results" style="display:none;">No articles found.</div>
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-head">
-          <div class="footer-head-title">
-            <div class="footer-logo">
-              <img src="" alt="Puzzle Bus Logo" />
-            </div>
-            <h4>Puzzle Bus</h4>
+  <main>
+    <div class="article-grid" id="cards-container">
+      <article class="article-card" data-tags="type-review genre-geography" data-date="2025-07-01">
+        <img src="../assets/geography.png" alt="Article 1">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Review</span>
+            <span class="category-pill">Geography</span>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Article 1</h3>
+          <p>Article 1 content lorem ipsum.</p>
+          <div class="meta">2025-07-01</div>
+        </div>
+      </article>
 
-          <div class="footer-icon">
-            <a href="#" target="_blank" rel="noopener">
-              <img src="../assets/unnamed.png" alt="YouTube" />
-            </a>
-            <a href="#" target="_blank" rel="noopener">
-              <img src="../assets/unnamed.png" alt="Reddit" />
-            </a>
-            <a href="#" target="_blank" rel="noopener">
-              <img src="../assets/unnamed.png" alt="Instagram" />
-            </a>
+      <article class="article-card" data-tags="type-report genre-trivia" data-date="2025-06-15">
+        <img src="assets/geography.png" alt="Article 2">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Report</span>
           </div>
+          <h3>Article 2</h3>
+          <p>BURGLE BURGLE BURGLE</p>
+          <div class="meta">2025-06-15</div>
         </div>
+      </article>
 
-        <div class="footer-column">
-          <h4>Nav</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../reviews.html">Reviews</a></li>
-            <li><a href="../pages/busline.html">Shortlist</a></li>
-          </ul>
+      <article class="article-card" data-tags="type-review genre-trivia" data-date="2025-05-20">
+        <img src="assets/geography.png" alt="Article 3">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Review</span>
+          </div>
+          <h3>Article 3</h3>
+          <div class="meta">2025-05-20</div>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="footer-column">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">User Data</a></li>
-            <li><a href="#">Acknowledgements</a></li>
-          </ul>
+      </article>
+
+    </div>
+
+    <div class="no-results" id="no-results" style="display:none;">No articles found.</div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-head">
+        <div class="footer-head-title">
+          <div class="footer-logo">
+            <img src="" alt="Puzzle Bus Logo" />
+          </div>
+          <h4>Puzzle Bus</h4>
         </div>
-        <div class="footer-column">
-          <h4>Other</h4>
-          <ul>
-            <li><a href="../pages/about.html">About</a></li>
-            <li><a href="../pages/contact.html">Contact</a></li>
-          </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-icon">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="../assets/unnamed.png" alt="YouTube" />
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="../assets/unnamed.png" alt="Reddit" />
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="../assets/unnamed.png" alt="Instagram" />
+          </a>
         </div>
       </div>
 
-      <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
-    </footer>
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../reviews.html">Reviews</a></li>
+          <li><a href="../pages/busline.html">Shortlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
+  </footer>
 
   <script>
     const searchBar = document.getElementById('search-bar');
