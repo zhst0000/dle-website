@@ -1,16 +1,18 @@
     <header>
-      <div class="header-container">
-        <div class="header-head">
-        <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
-        <a href="../index.html" class="header-title">Puzzle Bus</a>
-        </div>
-        <nav class="header-nav">
-          <ul>
-        <li><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
-        <li><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
-        <li><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
-        <li><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
-          </ul>
-        </nav>
+    <div class="header-container">
+      <div class="header-left">
+      <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
+      <a href="../index.html" class="header-title">Puzzle Bus</a>
       </div>
-    </header>
+      <nav class="header-nav">
+        <ul>
+      <li class="flairitem1"><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
+      <li class="flairitem2"><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
+      <li class="flairitem3"><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
+      <li class="flairitem4"><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
+      <div class="flairEnd" id="flair1"><div class="flairEndLittle"></div></div>
+      <div class="flairEnd" id="flair2"><div class="flairEndLittle"></div>
+        </ul>
+      </nav>
+    </div>
+  </header>
