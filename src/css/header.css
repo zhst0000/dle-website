@@ -90,6 +90,24 @@ header {
    
 
     background-color: var(--color-theme-bone-200);
+    background-color: grey;
+
+
+
+
+
+width: 500px;
+height: 10px;
+border-radius: 5px;
+position: absolute;
+top: 16px;
+
+
+
+
+
+
+    /*
     --flairWidth: 500px;
     --flairWeight: 10px;
     --flairHeight: 50px;
@@ -103,7 +121,9 @@ header {
     height: var(--flairHeight);
     position: absolute;
 
-    clip-path: polygon(
+    
+    
+     clip-path: polygon(
       0 0,
       var(--flairWeight) 0,
       var(--flairWeight) var(--flairBarTop),
@@ -115,11 +135,34 @@ header {
       0 100%
     );
 
-    top: -4px;
+top: -4px;
+*/
+
+
+
+
+
+
+
+
+
+    
     z-index: -1;
     transition-duration: .5s;
     transition-timing-function: ease-out;
   }
+
+.flairEndLittle{
+  background-color: inherit;
+  width: 36px;
+  height: 10px;
+  rotate: -45deg;
+  border-radius: 5px;
+  position: absolute;
+  left: -23px;
+  top: 10px;
+}
+
 
  
 
