@@ -13,18 +13,16 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-  .header-left {
+  .header-head {
     padding-left: 120px;
     display: flex;
     align-items: center;
     gap: 12px; 
   }
-
   .header-logo {
     height: 40px; 
     width: auto;
   }
-
   .header-title {
     font-family: var(--header-font-title);
     font-size: 35px;
@@ -37,7 +35,6 @@ header {
     gap: 32px;
     padding-right: 120px;
   }
-
   .header-nav a {
     display: inline-block;
     font-size: 18px;
@@ -48,28 +45,28 @@ header {
     transition: background-color 0.2s ease;
     text-decoration: none;
   }
-  .header-nav .btn-1 {
+  .header-nav .chip-red {
     background-color: var(--color-theme-red-400); 
   }
-  .header-nav .btn-2 {
+  .header-nav .chip-blue {
     background-color: var(--color-theme-blue-400); 
   }
-  .header-nav .btn-3 {
+  .header-nav .chip-green {
     background-color: var(--color-theme-green-400); 
   }
-  .header-nav .btn-4 {
+  .header-nav .chip-purple {
     background-color: var(--color-theme-purple-400); 
   }
   /* Darken on hover */
-  .header-nav .btn-1:hover {
+  .header-nav .chip-red:hover {
     background-color: var(--color-theme-red-600);
   }
-  .header-nav .btn-2:hover {
+  .header-nav .chip-blue:hover {
     background-color: var(--color-theme-blue-600);
   }
-  .header-nav .btn-3:hover {
+  .header-nav .chip-green:hover {
     background-color: var(--color-theme-green-600);
   }
-  .header-nav .btn-4:hover {
+  .header-nav .chip-purple:hover {
     background-color: var(--color-theme-purple-600);
   }

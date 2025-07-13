@@ -15,7 +15,6 @@
             color: var(article-color-text);
             background: var(article-color-body);
         }
-        
         .article-container {
             max-width: 800px;
             margin: 30px auto;
@@ -26,6 +25,11 @@
         }
         .article-container h1 {
             color: #333;
+        }
+        .article-container h2 {
+            color: #666;
+            font-size: 14px;
+            line-height: 0.8;
         }
         .article-container p {
             line-height: 1.6;
@@ -42,51 +46,22 @@
             margin-bottom: 20px;
             text-align: center;
         }
-
-        .scroll-node {
-          stroke: #ff5722;
-          stroke-width: 4;
-          fill: #fff;
-          transition: fill 0.3s ease;
-          opacity: 0;
-          }
-        .scroll-node.visible {
-          opacity: 1;
-        }
-        #scroll-node-svg {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-            overflow: visible;
-        }
-        #scroll-line-svg {
-          fill: none;
-          stroke: #ff5722;
-          stroke-width: 6;
-          stroke-linecap: round;
-          stroke-dasharray: 0;
-          stroke-dashoffset: 0;
-        }
     </style>
 </head>
 
-<body>
+<body style="background-color: var(--color-theme-cool-200);">
     <header>
       <div class="header-container">
-        <div class="header-left">
+        <div class="header-head">
         <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
         <a href="../index.html" class="header-title">Puzzle Bus</a>
         </div>
         <nav class="header-nav">
           <ul>
-        <li><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
-        <li><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
-        <li><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
-        <li><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
+            <li><a href="../index.html" class="chip-red">Reviews</a></li>
+            <li><a href="../pages/busline.html" class="chip-blue">Shortlist</a></li>
+            <li><a href="../pages/about.html" class="chip-green">About</a></li>
+            <li><a href="../pages/contact.html" class="chip-purple">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -98,7 +73,8 @@
       <div class="caption">[CAPTION]</div>
 
       <h1>[TITLE]</h1>
-      <p><strong>Published:</strong>[DATE]</p>
+      <h2><i>Published: [DATE]</i></h2>
+      <h2><i>Read Length: [MIN]</i></h2>
       <p>[PARAGRAPH BODY]</p>
 
       <img src="[IMG]" alt="[IMG DESCRIPTION]" class="article-image">
@@ -122,7 +98,18 @@
       <p><strong>[ENDING LINE]</strong></p>
     
 <!-- SCORECARD -->        
-      <div class="bar-card">
+      <div class="scorecard-container">
+
+      <div class="category gameplay">
+        <div class="circle">[SCORE]</div>
+        <div class="info-block">
+          <div class="category-title">Gameplay</div>
+          <div class="bar-container">
+            <div class="bar" style="width: [0-100]%;"></div>
+          </div>
+          <div>[CAPTION]</div>
+        </div>
+      </div>
 
       <div class="category theme">
         <div class="circle">[SCORE]</div>
@@ -135,10 +122,10 @@
         </div>
       </div>
 
-      <div class="category gameplay">
+      <div class="category difficulty">
         <div class="circle">[SCORE]</div>
         <div class="info-block">
-          <div class="category-title">Gameplay and Mechanics</div>
+          <div class="category-title">Difficulty</div>
           <div class="bar-container">
             <div class="bar" style="width: [0-100]%;"></div>
           </div>
@@ -147,17 +134,6 @@
       </div>
 
       <div class="category engineering">
-        <div class="circle">[SCORE]</div>
-        <div class="info-block">
-          <div class="category-title">Accessibility</div>
-          <div class="bar-container">
-            <div class="bar" style="width: [0-100]%;"></div>
-          </div>
-          <div>[CAPTION]</div>
-        </div>
-      </div>
-
-      <div class="category replayability">
         <div class="circle">[SCORE]</div>
         <div class="info-block">
           <div class="category-title">Engineering</div>
@@ -170,88 +146,28 @@
 
       </div>
 
-<!-- SCROLL EFFECT -->
-    <svg id="scroll-node-svg" viewBox="0 0 200 1000" preserveAspectRatio="xMaxYMin slice">
-      <path id="scroll-line-svg" d="M100,0 L100,1000" />
-      <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
-      <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
-      <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
-      <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
-    </svg> 
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const line = document.getElementById('scroll-line-svg');
-      const nodes = Array.from(document.querySelectorAll('.scroll-node'));
-
-      const length = line.getTotalLength();
-      line.style.strokeDasharray = length;
-      line.style.strokeDashoffset = length;
-
-      const viewBoxHeight = 1000;
-      nodes.forEach(node => {
-        const y = parseFloat(node.getAttribute('data-pos'));
-        node._triggerLength = (y / viewBoxHeight) * length;
-      });
-
-      let ticking = false;
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
-
-            const offset = length * (1 - progress);
-            line.style.strokeDashoffset = offset;
-
-            const drawn = length - offset;
-
-            nodes.forEach(node => {
-              if (drawn >= node._triggerLength) {
-                node.classList.add('visible');
-                node.style.fill = '#ff5722';
-              } 
-              else {
-                node.classList.remove('visible');
-                node.style.fill = '#fff';
-              }
-            });
-
-            ticking = false;
-          });
-          
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    });
-    </script>
-
     </div>
-  
+
     <footer>
       <div class="footer-container">
-        <div class="footer-about">
-          <div class="footer-about-header">
-            <div class="footer-icon-space">
+        <div class="footer-head">
+          <div class="footer-head-title">
+            <div class="footer-logo">
               <img src="" alt="Puzzle Bus Logo" />
             </div>
             <h4>Puzzle Bus</h4>
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-          <div class="footer-social">
+          <div class="footer-icon">
             <a href="#" target="_blank" rel="noopener">
-              <img src="assets/unnamed.png" alt="YouTube" />
+              <img src="../assets/unnamed.png" alt="YouTube" />
             </a>
             <a href="#" target="_blank" rel="noopener">
-              <img src="assets/unnamed.png" alt="Reddit" />
+              <img src="../assets/unnamed.png" alt="Reddit" />
             </a>
             <a href="#" target="_blank" rel="noopener">
-              <img src="assets/unnamed.png" alt="Instagram" />
+              <img src="../assets/unnamed.png" alt="Instagram" />
             </a>
           </div>
         </div>
@@ -259,9 +175,9 @@
         <div class="footer-column">
           <h4>Nav</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="pages/busline.html">Bus Line</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../reviews.html">Reviews</a></li>
+            <li><a href="../pages/busline.html">Shortlist</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -274,14 +190,29 @@
         <div class="footer-column">
           <h4>Other</h4>
           <ul>
-            <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
     </footer>
+
+<!-- SCROLL EFFECT -->
+    <svg id="scroll-node-svg" 
+        viewBox="0 0 200 1000" 
+        preserveAspectRatio="xMaxYMin slice"
+        data-line-color="var(--color-theme-red-400)" 
+        data-node-color="var(--color-theme-red-400)">
+      <path id="scroll-line-svg" d="M100,0 L100,1000" />
+      <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
+      <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
+      <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
+      <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
+    </svg>
+
+    <script src="../src/css/scroll.js"></script>
 
 </body> 
 

@@ -1,15 +1,15 @@
     <header>
       <div class="header-container">
-        <div class="header-left">
+        <div class="header-head">
         <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
         <a href="../index.html" class="header-title">Puzzle Bus</a>
         </div>
         <nav class="header-nav">
           <ul>
-        <li><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
-        <li><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
-        <li><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
-        <li><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
+            <li><a href="../index.html" class="chip-red">Reviews</a></li>
+            <li><a href="../pages/busline.html" class="chip-blue">Shortlist</a></li>
+            <li><a href="../pages/about.html" class="chip-green">About</a></li>
+            <li><a href="../pages/contact.html" class="chip-purple">Contact</a></li>
           </ul>
         </nav>
       </div>

@@ -1,0 +1,13 @@
+    <svg id="scroll-node-svg" 
+        viewBox="0 0 200 1000" 
+        preserveAspectRatio="xMaxYMin slice"
+        data-line-color="var(--color-theme-red-400)" 
+        data-node-color="var(--color-theme-red-400)">
+      <path id="scroll-line-svg" d="M100,0 L100,1000" />
+      <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
+      <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
+      <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
+      <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
+    </svg>
+    
+    <script src="../src/css/scroll.js"></script>
