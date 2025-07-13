@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle Bus – Front Page</title>
+  <link rel="stylesheet" href="../src/css/main.css"/>
+ 
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f5f5f5;
+    }
+    
+     main > h1 {
+       margin-left: 20px;
+     }
+
+     .main > h1 {
+       margin: 0;
+       font-size: 50px;
+       margin-left: 20px;
+     }
+     .main > h2 {
+       font-style: italic;
+       margin-top: 0;
+       margin-left: 20px;
+       margin-bottom: 10px;
+       display: inline-block;
+     }
+     .contactCard > a {
+       color: #4f4f4f;
+     }
+
+     .contactCard {
+       background-color: rgb(252, 238, 221);
+       display: inline-block;
+       padding: 30px;
+       border-radius: 10px;
+       margin: 30px;
+       position: relative;
+       border: 1px solid rgb(249, 211, 164);
+     }
+
+     .platformsContainer {
+       display: grid;
+       height: 75px;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       width: 100%;
+       grid-template-areas: "platform1 platform2 platform3 platform4";
+       position: relative;
+       
+      
+     }
+
+     .platform1 {
+       grid-area: platform1;
+
+       
+     }
+     .platform2 {
+       grid-area: platform2;
+     }
+     .platform3 {
+       grid-area: platform3;
+     }
+     .platform4 {
+       grid-area: platform4;
+     }
+     .platformsContainer img {
+       height: 75px;
+       position: relative;
+       z-index: 2;
+     }
+
+     .platformsContainer a {
+       justify-self: center;
+       position: relative;
+       z-index: 1;
+       align-self: center;
+     }
+     .platformBackground{
+       position: absolute;
+       background-color: rgb(252, 238, 221);
+      
+       height: 70px;
+       width: 70px;
+       z-index: 1;
+       border-radius: 100%;
+       top: 2px;
+       left: 2px;
+     }
+
+.platformDesign{
+   position: absolute;
+   background-color: black;
+   height: 20px;
+   width: calc(100% - 150px);
+   top: 27.5px;
+   left: 75px;
+}
+
+
+
+
+
+
+    
+  </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+          <a href="#" class="logo">Puzzle Bus</a>
+          <nav class="site-nav">
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="pages/busline.html">Bus Line</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="main">
+        <div class="contactCard">
+          <h1>Contact Us</h1>
+          <h2>Via Email</h2>
+          <a href="mailto:PuzzleBusGame@gmail.com">
+            <h3>PuzzleBusGame@gmail.com</h3></a
+          >
+          <h2>Or Join the Conversation on These Platforms:</h2>
+          <div class="platformsContainer">
+<div class="platformDesign"></div>
+            
+            <a href="https://reddit.com" target="_blank"
+              ><div class="platformBackground platform1"></div><img class="platform1" src="ContactUsPageAssets/redditIcon.png"
+            /></a>
+            <a href="https://instagram.com" target="_blank"
+              ><div class="platformBackground platform2"></div><img class="platform2" src="ContactUsPageAssets/instagramIcon.png"
+            /></a>
+            <a href="https://youtube.com" target="_blank"
+              ><div class="platformBackground platform3"></div><img class="platform3" src="ContactUsPageAssets/youtubeIcon.png"
+            /></a>
+            <a href="https://facebook.com" target="_blank"
+              ><div class="platformBackground platform4"></div><img class="platform4" src="ContactUsPageAssets/facebookIcon.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-about-header">
+          <div class="footer-icon-space">
+            <img src="" alt="Puzzle Bus Logo">
+          </div>
+          <h4>Puzzle Bus</h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="YouTube">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Reddit">
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <img src="assets/unnamed.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="pages/busline.html">Bus Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">User Data</a></li>
+          <li><a href="#">Acknowledgements</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Other</h4>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Puzzle Bus.
+    </div>
+  </footer>
+    
+</body>
+</html>
