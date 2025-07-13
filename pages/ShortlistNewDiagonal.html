@@ -27,6 +27,7 @@
         line-height: 1.5;
         color: #222;
         background: #f5f5f5;
+        
       }
 
       .main {
@@ -68,6 +69,7 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
           rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         border: 1px solid rgb(250, 201, 141);
+
       }
 
       .category:hover {
@@ -76,6 +78,7 @@
       }
 
       img.game-logo {
+        --illegibleImageBackground: var(--color-bg-footer);
         width: 200px;
         height: 80px;
         object-fit: contain;
@@ -116,7 +119,7 @@
         z-index: 1;
         position: absolute;
         left: 40px;
-        bottom: 44px;
+        bottom: 54px;
       }
 
       .category-design {
@@ -254,6 +257,7 @@
       .subcategory img[src*="Stop icon.png"] {
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
+
       }
       .subcategory:hover img[src*="Stop icon.png"] {
         scale: 1.2;
@@ -617,7 +621,7 @@
             </p>
           </div>
           <div class="subcategory">
-            <img
+            <img style="background-color: var(--illegibleImageBackground); border-radius: 10px;"
               class="game-logo"
               src="ShortlistAssets/relatle.png"
               alt=""
@@ -784,6 +788,7 @@
           </div>
           <div class="subcategory">
             <img
+            style="background-color: var(--illegibleImageBackground); border-radius: 10px;"
               class="game-logo"
               src="ShortlistAssets/thrice.webp"
               alt=""
@@ -912,6 +917,7 @@
           </div>
           <div class="subcategory">
             <img
+            style="background-color: var(--illegibleImageBackground); border-radius: 10px;"
               class="game-logo"
               src="ShortlistAssets/orbits.svg"
               alt=""
