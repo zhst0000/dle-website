@@ -13,12 +13,12 @@
     body {
       font-family: var(--article-font-body);
     }
-    .main-container {
+    main{
       max-width: 80%;
       margin: 0 auto;
       padding: 24px 32px;
     }
-    .carousel {
+    .carousel-container {
       position: relative;
       margin-bottom: 32px;
       overflow: hidden;
@@ -49,7 +49,7 @@
       color: #fff;
       backdrop-filter: blur(2px);
     }
-    .carousel .category {
+    .carousel.category {
       font-size: 14px; font-weight: 700;
       text-transform: uppercase; opacity: 0.9;
       margin-bottom: 8px;
@@ -96,9 +96,9 @@
     </div>
   </header>
 
-  <div class="main-container">
+  <main>
 <!-- CAROUSEL -->
-    <div class="carousel" id="featuredCarousel">
+    <div class="carousel-container" id="featuredCarousel">
       <div class="carousel-slide active">
         <a href="pages/article1.html">
           <img src="assets/foodguessr1.png" alt="Featured 1">
@@ -162,7 +162,7 @@
 
     </div>
   
-  </div>
+  </main>
 
 <!-- SCROLL ORNAMENT-->
   <svg id="scroll-node-svg" 

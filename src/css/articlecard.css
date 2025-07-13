@@ -39,10 +39,16 @@
       background: rgba(255,255,255,0.95);
       transition: max-height 0.8s ease;
     }
-
+    .article-content h3 {
+      margin: 4px 0;
+      font-size: 18px;
+    }
     .article-content p {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #444;
       opacity: 0;
-      transition: opacity 0.4s ease
+      transition: opacity 0.4s ease;
     }
 
     .article-card:hover .article-content p {
@@ -65,24 +71,7 @@
       text-transform: uppercase;
     }
 
-    .article-content h3 {
-      margin: 4px 0;
-      font-size: 18px;
-    }
 
-    .article-content p {
-      font-size: 14px;
-      margin-top: 8px;
-      color: #444;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .article-card:hover .article-content p {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     .article-content .meta {
       font-size: 12px;
