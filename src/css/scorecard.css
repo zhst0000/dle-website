@@ -1,6 +1,6 @@
     .bar-card {
       position: relative;
-      max-width: 700px;
+      max-width: 100%;
       padding: 10px;               
       background: var(--color-bg-header);                             
       border-radius: 8px;             

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Palette Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    table {
+      border-collapse: collapse;
+      width: 95%;
+      margin: 20px auto;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 16px;
+      text-align: center;
+      vertical-align: top;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .swatch {
+      display: inline-block;
+      width: 120px;
+      height: 100px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+    }
+    .hex, .hsb {
+      display: block;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .spectrum {
+      margin-top: 6px;
+    }
+    .spectrum .mini {
+      display: inline-block;
+      width: 25px;
+      height: 40px;
+    }
+    .backgrounds {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .backgrounds button {
+      margin: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="backgrounds">
+    <button onclick="setBackground('bone', 'light')">Light Bone</button>
+    <button onclick="setBackground('bone', 'medium')">Medium Bone</button>
+    <button onclick="setBackground('bone', 'dark')">Dark Bone</button>
+    <button onclick="setBackground('cool', 'light')">Light Cool</button>
+    <button onclick="setBackground('cool', 'medium')">Medium Cool</button>
+    <button onclick="setBackground('cool', 'dark')">Dark Cool</button>
+  </div>
+  <table id="paletteTable">
+    <thead>
+      <tr>
+        <th>Color</th>
+        <th>A</th>
+        <th>B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Red</td>
+        <td class="color-cell" data-hex="#E41A1C"></td> <!--Select-->
+        <td class="color-cell" data-hex="#B31A15"></td> <!--Select2-->
+        <!-- #E60026 #C62828 #DA291C #9B111E #921001-->
+      </tr>
+      <tr>
+        <td>Blue</td>
+        <td class="color-cell" data-hex="#0F52BA"></td> <!--Select2-->
+        <td class="color-cell" data-hex="#003DA5"></td> <!--Select-->
+
+        <!-- #0078BF #1976D2 #1565C0 #1C9FDA #81A8D0 #0571B0 #0033FF-->
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td class="color-cell" data-hex="#2E7D32"></td> <!--Select2-->
+        <td class="color-cell" data-hex="#046307"></td> <!--Select-->
+        <!-- #006747 #388E3C #3D8C3B #00A651 #27802C #6A994E #8A9A5B #028A46 #81C784-->
+      </tr>
+      <tr>
+        <td>Purple</td>
+        <td class="color-cell" data-hex="#984EA3"></td> <!--Select2-->
+        <td class="color-cell" data-hex="#550686"></td> <!--Select-->
+        <!-- #6F2DA8 #8E24AA #6A1B9A #80276C #A60055 #6F2DA8 #9966CC #C779D0 #6F2DA8 #634490 #7763D3 #5240AC #4C2E73 #3E1051 #600049-->
+      </tr>
+      <tr>
+        <td>Orange</td>
+        <td class="color-cell" data-hex="#FA9203"></td> <!--Select2-->
+        <td class="color-cell" data-hex="#F86506"></td> <!--Select-->
+        <!-- #F37021 #F57C00 #EF6C00 #FF7F00 #F37021 #FF9F1C #F29544 #FFC857 #FF983B #F77D2E #FC7D5C #E14F08 #FC3E09-->
+      </tr>
+      <tr>
+        <td>Yellow</td>
+        <td class="color-cell" data-hex="#FFD100"></td> <!--Select-->
+        <td class="color-cell" data-hex="#FFD100"></td> <!--Select-->
+        <!-- #FFEB3B #FBC02D #FFCC00 #FFD54F #E4D00A #FFD27F #FFC857 #FDB956 #FDD143 #E5E522 #F3D646 #CD971D #FCAC01-->
+      </tr>
+      <tr>
+        <td>Brown</td>
+        <td class="color-cell" data-hex="#4E342E"></td> <!--Select2-->
+        <td class="color-cell" data-hex="#623412"></td> <!--Select-->
+
+        <!-- #8B572A #5D4037 #A56A00 #8B572A #8B5E3C #A0522D #B66E41 #8B5E3C #8B572A-->
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const backgroundSets = {
+      bone: {
+        light: '#F2ECE2',
+        medium: '#D9CFC1',
+        dark: '#B8AC96'
+      },
+      cool: {
+        light: '#E5E9ED',
+        medium: '#B0BEC5',
+        dark: '#78909C'
+      }
+    };
+
+    function setBackground(type, shade) {
+      const hex = backgroundSets[type][shade];
+      const textColor = isDark(hex) ? '#ffffff' : '#000000';
+
+      document.body.style.backgroundColor = hex;
+      document.body.style.color = textColor;
+
+      const table = document.getElementById('paletteTable');
+      const ths = table.getElementsByTagName('th');
+      const tds = table.getElementsByTagName('td');
+
+      table.style.backgroundColor = hex;
+      table.style.color = textColor;
+
+      for (let th of ths) {
+        th.style.backgroundColor = adjustHeader(hex, type);
+        th.style.color = textColor;
+      }
+
+      for (let td of tds) {
+        td.style.backgroundColor = hex;
+        td.style.color = textColor;
+      }
+    }
+
+    function isDark(hex) {
+      hex = hex.replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      const r = parseInt(hex.substr(0, 2), 16);
+      const g = parseInt(hex.substr(2, 2), 16);
+      const b = parseInt(hex.substr(4, 2), 16);
+      return (r * 0.299 + g * 0.587 + b * 0.114) < 150;
+    }
+
+    function adjustHeader(hex, type) {
+      let c = hex.replace('#', '');
+      if (c.length === 3) c = c.split('').map(v => v + v).join('');
+      let r = parseInt(c.substr(0, 2), 16);
+      let g = parseInt(c.substr(2, 2), 16);
+      let b = parseInt(c.substr(4, 2), 16);
+
+      const factor = type === 'bone' ? -20 : -30;
+      r = Math.max(0, Math.min(255, r + factor));
+      g = Math.max(0, Math.min(255, g + factor));
+      b = Math.max(0, Math.min(255, b + factor));
+
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function hexToHSB(hex) {
+      hex = hex.replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      let r = parseInt(hex.substring(0, 2), 16) / 255;
+      let g = parseInt(hex.substring(2, 4), 16) / 255;
+      let b = parseInt(hex.substring(4, 6), 16) / 255;
+
+      let max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h, s, v = max;
+
+      let d = max - min;
+      s = max === 0 ? 0 : d / max;
+
+      if (max === min) {
+        h = 0;
+      } else {
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+      }
+
+      return {
+        h: Math.round(h * 360),
+        s: Math.round(s * 100),
+        b: Math.round(v * 100)
+      };
+    }
+
+    function HSBtoRGB(h, s, v) {
+      s /= 100; v /= 100;
+      let c = v * s;
+      let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+      let m = v - c, r, g, b;
+
+      if (h >= 0 && h < 60) { r = c; g = x; b = 0; }
+      else if (h >= 60 && h < 120) { r = x; g = c; b = 0; }
+      else if (h >= 120 && h < 180) { r = 0; g = c; b = x; }
+      else if (h >= 180 && h < 240) { r = 0; g = x; b = c; }
+      else if (h >= 240 && h < 300) { r = x; g = 0; b = c; }
+      else { r = c; g = 0; b = x; }
+
+      r = Math.round((r + m) * 255);
+      g = Math.round((g + m) * 255);
+      b = Math.round((b + m) * 255);
+
+      return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
+    }
+
+    function renderSwatches() {
+      const cells = document.querySelectorAll('.color-cell');
+      cells.forEach(cell => {
+        const hex = cell.dataset.hex;
+        const hsb = hexToHSB(hex);
+
+        const numSteps = 7;
+        const centerIndex = Math.floor(numSteps / 2);
+
+        const satMin = 10;
+        const satMax = 100;
+
+        const briMin = 25;
+        const briMax = 100;
+
+        let spectrumHTML = '';
+
+        for (let i = 0; i < numSteps; i++) {
+        let newS, newB;
+
+        if (i < centerIndex) {
+            // Interpolate saturation from satMin up to original saturation
+            newS = satMin + ((hsb.s - satMin) * (i / centerIndex));
+            // Interpolate brightness from briMax down to original brightness
+            newB = briMax - ((briMax - hsb.b) * (i / centerIndex));
+        } else if (i > centerIndex) {
+            // Interpolate saturation from original saturation up to satMax
+            newS = hsb.s + ((satMax - hsb.s) * ((i - centerIndex) / centerIndex));
+            // Interpolate brightness from original brightness down to briMin
+            newB = hsb.b - ((hsb.b - briMin) * ((i - centerIndex) / centerIndex));
+        } else {
+            // Center step: use original saturation and brightness
+            newS = hsb.s;
+            newB = hsb.b;
+        }
+
+        // Clamp just in case
+        newS = Math.max(0, Math.min(100, newS));
+        newB = Math.max(0, Math.min(100, newB));
+
+        const newHex = HSBtoRGB(hsb.h, newS, newB);
+        spectrumHTML += `<span class="mini" style="background-color: ${newHex};"></span>`;
+        }
+
+        cell.innerHTML = `
+        <span class="swatch" style="background-color: ${hex};"></span><br/>
+        <span class="hex">${hex}</span>
+        <span class="hsb">HSB: ${hsb.h}°, ${Math.round(hsb.s)}%, ${Math.round(hsb.b)}%</span>
+        <div class="spectrum">${spectrumHTML}</div>
+        `;
+    });
+    }
+
+    renderSwatches();
+
+  </script>
+</body>
+</html>

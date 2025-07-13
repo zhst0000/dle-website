@@ -1,13 +1,16 @@
     <header>
-        <div class="container">
-          <a href="#" class="logo">Puzzle Bus</a>
-          <nav class="site-nav">
-            <ul>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="pages/busline.html">Bus Line</a></li>
-              <li><a href="pages/about.html">About</a></li>
-              <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-          </nav>
+      <div class="header-container">
+        <div class="header-left">
+        <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
+        <a href="../index.html" class="header-title">Puzzle Bus</a>
         </div>
-      </header>
+        <nav class="header-nav">
+          <ul>
+        <li><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
+        <li><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
+        <li><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
+        <li><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
