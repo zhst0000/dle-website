@@ -1,6 +1,6 @@
     <header>
       <div class="header-container">
-        <div class="header-left">
+        <div class="header-head">
         <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
         <a href="../index.html" class="header-title">Puzzle Bus</a>
         </div>

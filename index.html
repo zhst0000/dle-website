@@ -3,24 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Puzzle Bus – Front Page</title>
+  
   <link rel="stylesheet" href="src/css/main.css"/>
+  <link rel="stylesheet" href="src/css/articlecard.css">
+  
+  <title>Puzzle Bus</title>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      line-height: 1.5;
-      color: #222;
-      background: #f5f5f5;
+      font-family: var(--article-font-body);
     }
-    .news-container {
+    main{
       max-width: 80%;
       margin: 0 auto;
       padding: 24px 32px;
     }
-    .carousel {
+    .carousel-container {
       position: relative;
       margin-bottom: 32px;
       overflow: hidden;
@@ -51,7 +49,7 @@
       color: #fff;
       backdrop-filter: blur(2px);
     }
-    .carousel .category {
+    .carousel.category {
       font-size: 14px; font-weight: 700;
       text-transform: uppercase; opacity: 0.9;
       margin-bottom: 8px;
@@ -73,86 +71,9 @@
     .carousel-button.prev { left: 16px; }
     .carousel-button.next { right: 16px; }
 
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 12px;
-    }
-    .article-card {
-      position: relative;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-    }
-    .article-card:hover {
-      transform: translateY(-4px);
-    }
-    .article-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-    .article-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.6);
-      color: #222;
-      padding: 12px 16px;
-      transition: all 0.5s ease;
-      max-height: 80px;
-      overflow: hidden;
-      backdrop-filter: blur(6px);
-    }
-
-    .article-card:hover .article-content {
-      max-height: 200px;
-      background: rgba(255, 255, 255, 0.95);
-    }
-    .article-content .category {
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase;
-        color: #555;
-    }
-    .article-content .meta {
-      font-size: 12px; color: #999;
-      text-transform: uppercase;
-    }
-
-    .article-content h3 {
-      font-size: 18px;
-      margin-bottom: 2px;
-    }
-    .article-content p {
-      font-size: 14px;
-      margin-top: 8px;
-      color: #444;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .article-card:hover .article-content p {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
     @media (max-width: 600px) {
       .carousel { height: 250px; }
       .carousel h2 { font-size: 24px; }
-      .article-grid {
-        grid-template-columns: 1fr;
-      }
-      .article-card img {
-        height: 160px;
-      }
     }
             .scroll-node {
           stroke: #ff5722;
@@ -185,186 +106,126 @@
   </style>
 </head>
 
-
 <body>
-
-
-
-
-    <header>
-      <div class="header-container">
-        <div class="header-left">
-        <img src="../assets/unnamed.png" alt="Logo" class="header-logo">
-        <a href="../index.html" class="header-title">Puzzle Bus</a>
-        </div>
-        <nav class="header-nav">
-          <ul>
-        <li class="flairitem1"><a href="../index.html" class="nav-btn btn-1">Reviews</a></li>
-        <li class="flairitem2"><a href="../pages/busline.html" class="nav-btn btn-2">Shortlist</a></li>
-        <li class="flairitem3"><a href="../pages/about.html" class="nav-btn btn-3">About</a></li>
-        <li class="flairitem4"><a href="../pages/contact.html" class="nav-btn btn-4">Contact</a></li>
-        <div class="flairEnd" id="flair1"><div class="flairEndLittle"></div></div>
-        <div class="flairEnd" id="flair2"><div class="flairEndLittle"></div>
-          </ul>
-        </nav>
+  <header>
+    <div class="header-container">
+      <div class="header-head">
+      <img src="assets/unnamed.png" alt="Logo" class="header-logo">
+      <a href="index.html" class="header-title">Puzzle Bus</a>
       </div>
-    </header>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html" class="chip-red">Reviews</a></li>
+          <li><a href="pages/busline.html" class="chip-blue">Shortlist</a></li>
+          <li><a href="pages/about.html" class="chip-green">About</a></li>
+          <li><a href="pages/contact.html" class="chip-purple">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+<!-- CAROUSEL -->
+    <div class="carousel-container" id="featuredCarousel">
+      <div class="carousel-slide active">
+        <a href="pages/article1.html">
+          <img src="assets/foodguessr1.png" alt="Featured 1">
+          <div class="carousel-overlay">
+            <div class="category">Featured 1</div>
+            <h2>Article 1 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </a>
+      </div>
+      <div class="carousel-slide">
+        <a href="pages/article2.html">
+          <img src="assets/foodguessr2.png" alt="Featured 2">
+          <div class="carousel-overlay">
+            <div class="category">Featured 2</div>
+            <h2>Article 2 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </a>
+      </div>
+      <div class="carousel-slide">
+        <a href="pages/article3.html">
+          <img src="assets/foodguessr3.png" alt="Featured 3">
+          <div class="carousel-overlay">
+            <div class="category">Featured 3</div>
+            <h2>Article 3 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </a>
+      </div>
+      <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+      <button class="carousel-button next" onclick="nextSlide()">❯</button>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll('.carousel-slide');
+      let current = 0;
+      function showSlide(idx) {
+        slides[current].classList.remove('active');
+        current = (idx + slides.length) % slides.length;
+        slides[current].classList.add('active');
+      }
+      function nextSlide() { showSlide(current + 1); }
+      function prevSlide() { showSlide(current - 1); }
+    </script>
+
+<!-- ARTICLE GRID -->
+    <div class="article-grid" id="cards-container">
+
+      <article class="article-card" data-tags="type-review genre-trivia" data-date="2025-05-20">
+        <img src="assets/geography.png" alt="Article 3">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Review</span>
+          </div>
+          <h3>Article 3</h3>
+          <div class="meta">2025-05-20</div>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </article>
+
+    </div>
   
+  </main>
 
-
-
-        <svg id="scroll-node-svg" viewBox="0 0 200 1000" preserveAspectRatio="xMaxYMin slice">
-      <path id="scroll-line-svg" d="M100,0 L100,1000" />
-      <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
-      <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
-      <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
-      <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
-    </svg> 
-
-      <div class="news-container">
-        <div class="carousel" id="featuredCarousel">
-          <div class="carousel-slide active">
-            <a href="pages/article1.html">
-              <img src="assets/foodguessr1.png" alt="Featured 1">
-              <div class="carousel-overlay">
-                <div class="category">Featured 1</div>
-                <h2>Article 1 Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </a>
-          </div>
-          <div class="carousel-slide">
-            <a href="pages/article2.html">
-              <img src="assets/foodguessr2.png" alt="Featured 2">
-              <div class="carousel-overlay">
-                <div class="category">Featured 2</div>
-                <h2>Article 2 Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </a>
-          </div>
-          <div class="carousel-slide">
-            <a href="pages/article3.html">
-              <img src="assets/foodguessr3.png" alt="Featured 3">
-              <div class="carousel-overlay">
-                <div class="category">Featured 3</div>
-                <h2>Article 3 Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </a>
-          </div>
-          <button class="carousel-button prev" onclick="prevSlide()">❮</button>
-          <button class="carousel-button next" onclick="nextSlide()">❯</button>
-        </div>
+<!-- SCROLL ORNAMENT-->
+  <svg id="scroll-node-svg" 
+      viewBox="0 0 200 1000" 
+      preserveAspectRatio="xMaxYMin slice"
+      data-line-color="var(--color-theme-red-400)" 
+      data-node-color="var(--color-theme-red-400)">
+    <path id="scroll-line-svg" d="M100,0 L100,1000" />
+    <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
+    <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
+    <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
+    <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
+  </svg>
+  <script src="src/css/scroll.js"></script>
     
-        <div class="article-grid">
-          <article class="article-card">
-            <a href="pages/article1.html">
-              <img src="assets/geography.png" alt="Article 1">
-            </a>
-            <div class="article-content">
-              <div class="category">Review</div>
-              <h3><a href="pages/article1.html">Article 1 Title</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-              <div class="meta">5/11/2025</div>
-            </div>
-          </article>
-    
-          <article class="article-card">
-            <a href="pages/article2.html">
-              <img src="assets/geography.png" alt="Article 2">
-            </a>
-            <div class="article-content">
-              <div class="category">Review</div>
-              <h3><a href="pages/article2.html">Article 2 Title</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-              <div class="meta">5/11/2025</div>
-            </div>
-          </article>
-    
-          <article class="article-card">
-            <a href="pages/article3.html">
-              <img src="assets/geography.png" alt="Article 3">
-            </a>
-            <div class="article-content">
-              <div class="category">Review</div>
-              <h3><a href="pages/article3.html">Article 3 Title</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-              <div class="meta">5/11/2025</div>
-            </div>
-          </article>
-    
-          <article class="article-card">
-            <a href="#">
-              <img src="assets/unnamed.png" alt="Article 4">
-            </a>
-            <div class="article-content">
-              <div class="category">Weekly Highlights</div>
-              <h3><a href="#">Article 4 Title</a></h3>
-              <div class="meta">5/10/2025</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-            </div>
-          </article>
-    
-          <article class="article-card">
-            <a href="#">
-              <img src="assets/unnamed.png" alt="Article 5">
-            </a>
-            <div class="article-content">
-              <div class="category">Weekly Highlights</div>
-              <h3><a href="#">Article 5 Title</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-              <div class="meta">5/10/2025</div>
-            </div>
-          </article>
-    
-          <article class="article-card">
-            <a href="#">
-              <img src="assets/geography.png" alt="Article 6">
-            </a>
-            <div class="article-content">
-              <div class="category">Review</div>
-              <h3><a href="#">Article 6 Title</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit odio, ornare mattis dolor sed, luctus tempor mauris.</p>
-              <div class="meta">5/10/2025</div>
-            </div>
-          </article>
-        </div>
-      </div>
-  <!-- JS Carousel -->
-  <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    let current = 0;
-    function showSlide(idx) {
-      slides[current].classList.remove('active');
-      current = (idx + slides.length) % slides.length;
-      slides[current].classList.add('active');
-    }
-    function nextSlide() { showSlide(current + 1); }
-    function prevSlide() { showSlide(current - 1); }
-  </script>
-
-
-<footer>
+  <footer>
     <div class="footer-container">
-      <div class="footer-about">
-        <div class="footer-about-header">
-          <div class="footer-icon-space">
-            <img src="" alt="Puzzle Bus Logo">
+      <div class="footer-head">
+        <div class="footer-head-title">
+          <div class="footer-logo">
+            <img src="" alt="Puzzle Bus Logo" />
           </div>
           <h4>Puzzle Bus</h4>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <div class="footer-social">
+        <div class="footer-icon">
           <a href="#" target="_blank" rel="noopener">
-            <img src="../assets/unnamed.png" alt="YouTube">
+            <img src="assets/unnamed.png" alt="YouTube" />
           </a>
           <a href="#" target="_blank" rel="noopener">
-            <img src="../assets/unnamed.png" alt="Reddit">
+            <img src="assets/unnamed.png" alt="Reddit" />
           </a>
           <a href="#" target="_blank" rel="noopener">
-            <img src="../assets/unnamed.png" alt="Instagram">
+            <img src="assets/unnamed.png" alt="Instagram" />
           </a>
         </div>
       </div>
@@ -374,7 +235,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="pages/busline.html">Bus Line</a></li>
+          <li><a href="pages/busline.html">Shortlist</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -393,61 +254,8 @@
       </div>
     </div>
 
-    <div class="footer-bottom">
-      &copy; 2025 Puzzle Bus.
-    </div>
+    <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
   </footer>
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const line = document.getElementById('scroll-line-svg');
-      const nodes = Array.from(document.querySelectorAll('.scroll-node'));
-
-      const length = line.getTotalLength();
-      line.style.strokeDasharray = length;
-      line.style.strokeDashoffset = length;
-
-      const viewBoxHeight = 1000;
-      nodes.forEach(node => {
-        const y = parseFloat(node.getAttribute('data-pos'));
-        node._triggerLength = (y / viewBoxHeight) * length;
-      });
-
-      let ticking = false;
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
-
-            const offset = length * (1 - progress);
-            line.style.strokeDashoffset = offset;
-
-            const drawn = length - offset;
-
-            nodes.forEach(node => {
-              if (drawn >= node._triggerLength) {
-                node.classList.add('visible');
-                node.style.fill = '#ff5722';
-              } 
-              else {
-                node.classList.remove('visible');
-                node.style.fill = '#fff';
-              }
-            });
-
-            ticking = false;
-          });
-          
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    });
 </script>
 </body>
 </html>

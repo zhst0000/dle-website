@@ -1,0 +1,39 @@
+    <div class="article-grid" id="cards-container">
+      <article class="article-card" data-tags="type-review genre-geography" data-date="2025-07-01">
+        <img src="../assets/geography.png" alt="Article 1">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Review</span>
+            <span class="category-pill">Geography</span>
+          </div>
+          <h3>Article 1</h3>
+          <p>Article 1 content lorem ipsum.</p>
+          <div class="meta">2025-07-01</div>
+        </div>
+      </article>
+
+      <article class="article-card" data-tags="type-report genre-trivia" data-date="2025-06-15">
+        <img src="assets/geography.png" alt="Article 2">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Report</span>
+          </div>
+          <h3>Article 2</h3>
+          <p>BURGLE BURGLE BURGLE</p>
+          <div class="meta">2025-06-15</div>
+        </div>
+      </article>
+
+      <article class="article-card" data-tags="type-review genre-trivia" data-date="2025-05-20">
+        <img src="assets/geography.png" alt="Article 3">
+        <div class="article-content">
+          <div class="category">
+            <span class="category-pill">Review</span>
+          </div>
+          <h3>Article 3</h3>
+          <div class="meta">2025-05-20</div>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </article>
+
+    </div>

@@ -13,18 +13,16 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-  .header-left {
+  .header-head {
     padding-left: 120px;
     display: flex;
     align-items: center;
     gap: 12px; 
   }
-
   .header-logo {
     height: 40px; 
     width: auto;
   }
-
   .header-title {
     font-family: var(--header-font-title);
     font-size: 35px;

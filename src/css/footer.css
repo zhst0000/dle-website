@@ -10,52 +10,52 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 24px;
   }
-  .footer-about {
+  .footer-head {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-right: 48px;
+    margin-right: 40px;
   }
-  .footer-about-header {
+  .footer-head h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .footer-head p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+  .footer-head-title {
     display: flex;
     align-items: center;
     gap: 12px;
   }
-  .footer-icon-space {
+  .footer-logo {
     width: 64px;
     height: 64px;
     background: rgba(0,0,0,0.1);
     border-radius: 8px;
     flex-shrink: 0;
   }
-  .footer-icon-space img {
+  .footer-logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  .footer-about h4 {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .footer-about p {
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.9;
-  }
-  .footer-social {
+  .footer-icon {
     display: flex;
     gap: 12px;
   }
-  .footer-social a {
+  .footer-icon a {
     display: inline-block;
     opacity: 0.8;
     transition: opacity 0.2s ease;
   }
-  .footer-social a:hover {
+  .footer-icon a:hover {
     opacity: 1;
   }
-  .footer-social img {
+  .footer-icon img {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -74,7 +74,6 @@ footer {
     margin-bottom: 8px;
   }
   .footer-column a {
-    color: var(--color-text-footer);
     font-size: 14px;
     opacity: 0.8;
     transition: opacity 0.2s ease;
