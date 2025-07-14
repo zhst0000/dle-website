@@ -1,7 +1,7 @@
     <header>
     <div class="header-container">
       <div class="header-left">
-      <img src="/dle-website/assets/logo.png" alt="Logo" class="header-logo">
+      <img src="/dle-website/assets/logo.svg" alt="Logo" class="header-logo">
       <a href="/dle-website/index.html" class="header-title">Puzzle Bus</a>
       </div>
       <nav class="header-nav">
