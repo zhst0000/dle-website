@@ -66,6 +66,7 @@ footer {
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
+    margin-left: 130px;
   
   }
   .footer-column ul {
@@ -74,6 +75,7 @@ footer {
   }
   .footer-column li {
     margin-bottom: 8px;
+    margin-left: 130px;
     
   }
   .footer-column a {

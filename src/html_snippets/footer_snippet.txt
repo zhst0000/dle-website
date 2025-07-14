@@ -1,4 +1,4 @@
-   <footer>
+  <footer>
     <div class="footer-container">
       <div class="footer-head">
         <div class="footer-head-title">
@@ -44,6 +44,7 @@
 
         </ul>
       </div>
+      
     </div>
 
     <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
