@@ -19,6 +19,7 @@ footer {
   .footer-head h4 {
     font-size: 16px;
     font-weight: 600;
+    
   }
   .footer-head p {
     font-size: 14px;
@@ -65,6 +66,7 @@ footer {
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
+  
   }
   .footer-column ul {
     list-style: none;
@@ -72,11 +74,13 @@ footer {
   }
   .footer-column li {
     margin-bottom: 8px;
+    
   }
   .footer-column a {
     font-size: 14px;
     opacity: 0.8;
     transition: opacity 0.2s ease;
+    
   }
   .footer-column a:hover {
     opacity: 1;
