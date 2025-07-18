@@ -7,14 +7,14 @@ header {
     z-index: 1000;
   }
   .header-container {
-    margin: 0 auto;
-    height: 64px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
   }
-  .header-head {
-    padding-left: 120px;
+  .header-left {
     display: flex;
     align-items: center;
     gap: 12px; 
@@ -22,6 +22,7 @@ header {
   .header-logo {
     height: 40px; 
     width: auto;
+    display: block;
   }
   .header-title {
     font-family: var(--header-font-title);
@@ -29,15 +30,18 @@ header {
     font-weight: 800;
     color: var(--color-logo);
   }
+
+  .header-nav {
+    position: relative;
+    align-items: center;
+    display: flex;
+  }
   .header-nav ul {
     list-style: none;
     display: flex;
     gap: 32px;
-    padding-right: 120px;
     position: relative;
-    
   }
-
   .header-nav a {
     display: inline-block;
     font-size: 18px;
@@ -49,9 +53,9 @@ header {
     text-decoration: none;
   }
 
-.nav-btn{
-  z-index: 2;
-}
+  .nav-btn{
+    z-index: 2;
+  }
 
   .header-nav .btn-1 {
     background-color: var(--color-theme-red-400); 
@@ -79,91 +83,31 @@ header {
     background-color: var(--color-theme-purple-600);
   }
 
-
   /* nav bar flair related */
-
-
-
   .flairEnd {
-   
-
     background-color: var(--color-theme-bone-200);
     background-color: grey;
-
-
-
-
-
-width: 500px;
-height: 10px;
-border-radius: 5px;
-position: absolute;
-top: 16px;
-left: 5px;
-
-
-
-
-
-
-    /*
-    --flairWidth: 500px;
-    --flairWeight: 10px;
-    --flairHeight: 50px;
-    --flairBarTop: calc(
-      calc(var(--flairHeight) / 2) - calc(var(--flairWeight) / 2)
-    );
-    --flairBarBottom: calc(
-      calc(var(--flairHeight) / 2) + calc(var(--flairWeight) / 2)
-    );
-    width: var(--flairWidth);
-    height: var(--flairHeight);
+    width: 500px;
+    height: 10px;
+    border-radius: 5px;
     position: absolute;
-
-    
-    
-     clip-path: polygon(
-      0 0,
-      var(--flairWeight) 0,
-      var(--flairWeight) var(--flairBarTop),
-      var(--flairWidth) var(--flairBarTop),
-      var(--flairWidth) var(--flairBarBottom),
-      var(--flairWeight) var(--flairBarBottom),
-      var(--flairWeight) 100%,
-
-      0 100%
-    );
-
-top: -4px;
-*/
-
-
-
-
-
-
-
-
-
-    
+    top: 17px;
+    left: 5px;
     z-index: -1;
     transition-duration: .5s;
     transition-timing-function: ease-out;
   }
 
-.flairEndLittle{
-  background-color: inherit;
-  width: 36px;
-  height: 10px;
-  rotate: -45deg;
-  border-radius: 5px;
-  position: absolute;
-  left: -23px;
-  top: 10px;
-}
-
-
- 
+  .flairEndLittle{
+    background-color: inherit;
+    width: 36px;
+    height: 10px;
+    rotate: -45deg;
+    border-radius: 5px;
+    position: absolute;
+    left: -24px;
+    top: 10px;
+  }
 
   #flair1 {
     left: -3px;
@@ -174,10 +118,10 @@ top: -4px;
   }
 
   .header-nav:hover #flair1 {
-    transform: translate(-50px, 0);
+    transform: translate(-20px, 0);
   }
   .header-nav:hover #flair2 {
-    transform: translate(-50px, 0);
+    transform: translate(-20px, 0);
   }
 
   .flairitem1:hover ~ .flairEnd {
@@ -193,4 +137,4 @@ top: -4px;
     background-color: var(--color-theme-purple-600);
   }
 
-
+  
