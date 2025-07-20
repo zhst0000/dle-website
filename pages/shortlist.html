@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Puzzle Bus – Front Page 1</title>
+    <title>The Shortlist</title>
     <link rel="stylesheet" href="../src/css/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
@@ -79,14 +79,18 @@
         height: 80px;
         object-fit: contain;
         margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .subcategory {
+        position: relative;
         display: inline-block;
         text-align: center;
         height: auto;
-        min-width: 200px;
-        width: 200px;
+       
+        max-width: 1000px;
         margin-left: 60px;
         margin-top: 0px;
       }
@@ -100,7 +104,7 @@
         height: 50px;
 
         position: relative;
-        top: 18px;
+        top: 20px;
       }
       .category-title {
         display: inline-block;
@@ -169,6 +173,10 @@
 
       .category h2 {
         margin: 0;
+        text-wrap: nowrap;
+        width: fit-content;
+        display: inline;
+        position: relative;
       }
 
       .category h3 {
@@ -178,7 +186,10 @@
       .category p {
         margin: 0;
         height: 111px;
+        max-width: 300px;
         width: auto;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .category-holder {
@@ -355,29 +366,29 @@
           </div>
           <div class="subcategory">
             <img class="game-logo" src="ShortlistAssets/juxtastat.png" alt="" />
-            <h2>Best Estimation</h2>
+            <h2>Statistics Heuristics</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Juxtastat</h3>
             <p>
-            Guess what area has more or less of any given statistic; favors those with a strong sense of america's demographic distributions Also try Retrostat!
+              Make an educated guess about how two areas compare based on a random stat.
             </p>
           </div>
           <div class="subcategory">
             <img class="game-logo" src="ShortlistAssets/travle.svg" alt="" />
-            <h2>Best Map Game</h2>
+            <h2>Make a Beeline</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Travle</h3>
             <p>
-              One of a kind game where the play has to plan a route between two countries with the fewest border crossing. Players who know the world map will excel.
+              Chart the course between Point A and Point B that passes through the fewest countries. 
             </p>
           </div>
           <div class="subcategory">
             <img class="game-logo" src="ShortlistAssets/FoodGussr.png" alt="" />
-            <h2>Best Food Game</h2>
+            <h2>Foodies&#39; Delight</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
@@ -388,25 +399,26 @@
           </div>
           <div class="subcategory">
             <img class="game-logo" src="ShortlistAssets/geogrid.svg" alt="" />
-            <h2>Best Grid Game</h2>
+            <h2>Tried and True Classic
+            </h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Geogrid</h3>
             <p>
-              A classic and approacable geography game; Geogrid favors a wide bredth of knowlege on geography, flags, demographics, and language. 
+              Show off the breadth of your geography knowledge as you fill out this grid.
             </p>
           </div>
 
           <div class="subcategory">
             <img class="game-logo" src="ShortlistAssets/unzoomed2.svg" alt="" />
-            <h2>Best Clues</h2>
+            <h2>Eye in the sky</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Unzoomed</h3>
             <p>
-              Unzoomed provides a satisfying clue progression where the player guesses a city based on progressivly more zoomed out satelite imagery.
+              Can you recognize this world city based on progressively widening satellite images? 
             </p>
           </div>
         </div>
@@ -853,9 +865,7 @@
             </div>
             <h3>Bracket City</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              Collapse a tower of nested brackets by solving their clues to reveal the original passage
             </p>
           </div>
           <div class="subcategory">
@@ -864,15 +874,13 @@
               src="ShortlistAssets/circuits.png"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>Get Amped</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Circuits</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              How much resistance will you face trying to decipher these common 2-word phrases?
             </p>
           </div>
           <div class="subcategory">
@@ -892,24 +900,7 @@
               distinctio facilis eaque?
             </p>
           </div>
-          <div class="subcategory">
-            <img
-            style="background-color: var(--illegibleImageBackground); border-radius: 10px;"
-              class="game-logo"
-              src="ShortlistAssets/orbits.svg"
-              alt=""
-            />
-            <h2>Best in Class</h2>
-            <div class="subcategory-design">
-              <img src="ShortlistAssets/Stop icon.png" alt="" />
-            </div>
-            <h3>Orbits</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
-            </p>
-          </div>
+  
           <div class="subcategory">
             <img
               class="game-logo"
@@ -922,9 +913,7 @@
             </div>
             <h3>RADDLE</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              Climb a ladder of cryptic clues where each answer helps solve the next rung
             </p>
           </div>
           <div class="subcategory">
@@ -933,15 +922,13 @@
               src="ShortlistAssets/spellcheck.png"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>Good at Speling?</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Spellcheck</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              How much do you rely on autocorrect? Find out in this spelling test of increasing difficulty
             </p>
           </div>
           <div class="subcategory">
@@ -956,9 +943,7 @@
             </div>
             <h3>Word Grid</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              Demonstrate your vocabulary by choosing the rarest words in this take on a classic format
             </p>
           </div>
         </div>
@@ -980,15 +965,13 @@
               src="ShortlistAssets/colorguesser.webp"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>Colorful Imagination</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>ColorGuesser</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              You&#39;ve been cued to guess the hue from the given clue. How well will you do?
             </p>
           </div>
           <div class="subcategory">
@@ -997,15 +980,13 @@
               src="ShortlistAssets/graphs.png"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>.</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Graphs</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              Select the correct Y-axis for a given graph from a group of plausible options. 
             </p>
           </div>
           <div class="subcategory">
@@ -1014,15 +995,13 @@
               src="ShortlistAssets/metazooa.svg"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>A Test in Taxonomy </h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Metazooa</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              Prune branches off the tree of life narrow down today&#39;s hidden species of animal
             </p>
           </div>
           <div class="subcategory">
@@ -1031,15 +1010,13 @@
               src="ShortlistAssets/poklesuits.svg"
               alt=""
             />
-            <h2>Best in Class</h2>
+            <h2>Poker Shark&#39;s Wager</h2>
             <div class="subcategory-design">
               <img src="ShortlistAssets/Stop icon.png" alt="" />
             </div>
             <h3>Pokle</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              deleniti a voluptates assumenda animi doloremque nemo quo
-              distinctio facilis eaque?
+              A logic puzzle where you figure out the board cards based on how different hands performed
             </p>
           </div>
         </div>
