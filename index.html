@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="./src/css/main.css"/>
   <link rel="stylesheet" href="./src/css/articlecard.css">
   
-  <title>Puzzle Bus</title>
+  <title>Home - Puzzle Bus</title>
+  <link rel="icon" type="x-icon" href="./assets/logo.svg">
 
   <style>
     body {
@@ -47,18 +48,23 @@
       padding: 24px;
       background: linear-gradient(transparent, rgb(0, 0, 0));
       color: #fff;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(4px);
     }
-    .carousel.category {
-      font-size: 14px; font-weight: 700;
-      text-transform: uppercase; opacity: 0.9;
-      margin-bottom: 8px;
+    .carousel-overlay h2 {
+      font-size: 14px; 
+      text-transform: uppercase; 
+      opacity: 0.8;
+      margin-top: 0px;
+      margin-bottom: 6px;
     }
-    .carousel h2 {
-      font-size: 32px; margin-bottom: 12px;
+    .carousel-overlay h1 {
+      font-size: 32px; 
+      margin-top: 0px;
+      margin-bottom: 12px;
     }
-    .carousel p {
-      font-size: 16px; max-width: 75%;
+    .carousel-overlay p {
+      font-size: 16px; 
+      max-width: 75%;
     }
     .carousel-button {
       position: absolute;
@@ -68,17 +74,16 @@
       padding: 8px 12px;
       cursor: pointer;
     }
-    .carousel-button.prev { left: 16px; }
-    .carousel-button.next { right: 16px; }
-
-    @media (max-width: 600px) {
-      .carousel { height: 250px; }
-      .carousel h2 { font-size: 24px; }
+    .carousel-button.prev { 
+      left: 16px;
+    }
+    .carousel-button.next { 
+      right: 16px;
     }
   </style>
 </head>
 
-<body>
+<body style="background-color: var(--color-theme-cool-200);">
   <header>
     <div class="header-container">
       <div class="header-left">
@@ -87,7 +92,7 @@
       </div>
       <nav class="header-nav">
         <ul>
-        <li class="flairitem1"><a href="./pages/articles.html" class="nav-btn btn-1">Reviews</a></li>
+        <li class="flairitem1"><a href="./pages/articles.html" class="nav-btn btn-1">Articles</a></li>
         <li class="flairitem2"><a href="./pages/shortlist.html" class="nav-btn btn-2">Shortlist</a></li>
         <li class="flairitem3"><a href="./pages/about_us.html" class="nav-btn btn-3">About</a></li>
         <li class="flairitem4"><a href="./pages/contact_us.html" class="nav-btn btn-4">Contact</a></li>
@@ -99,50 +104,56 @@
   </header>
 
   <main>
+
 <!-- CAROUSEL -->
     <div class="carousel-container" id="featuredCarousel">
-      <div class="carousel-slide active">
-        <a href="pages/article1.html">
-          <img src="assets/foodguessr1.png" alt="Featured 1">
+      <a id="carouselLink" href="./pages/meta_welcome/meta_welcome.html">
+        <div class="carousel-slide active" data-href="./pages/meta_welcome/welcome.html">
+          <img src="./pages/meta_welcome/welcome_banner.svg" alt="Featured 1">
           <div class="carousel-overlay">
-            <div class="category">Featured 1</div>
-            <h2>Article 1 Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Meta</h2>
+            <h1>Launch and Welcome</h1>
+            <p>Now boarding</p>
           </div>
-        </a>
-      </div>
-      <div class="carousel-slide">
-        <a href="pages/article2.html">
+        </div>
+        <div class="carousel-slide" data-href="./pages/review_burgle/review_burgle.html">
           <img src="assets/foodguessr2.png" alt="Featured 2">
           <div class="carousel-overlay">
-            <div class="category">Featured 2</div>
-            <h2>Article 2 Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Review</h2>
+            <h1>Foodguessr</h1>
+            <p>Now boarding</p>
           </div>
-        </a>
-      </div>
-      <div class="carousel-slide">
-        <a href="pages/article3.html">
+        </div>
+        <div class="carousel-slide" data-href="./pages/review_foodguessr/article_template.html">
           <img src="assets/foodguessr3.png" alt="Featured 3">
           <div class="carousel-overlay">
-            <div class="category">Featured 3</div>
-            <h2>Article 3 Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Review</h2>
+            <h1>Burgle</h1>
+            <p>Now boarding</p>
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
       <button class="carousel-button prev" onclick="prevSlide()">❮</button>
       <button class="carousel-button next" onclick="nextSlide()">❯</button>
     </div>
 
     <script>
       const slides = document.querySelectorAll('.carousel-slide');
+      const carouselLink = document.getElementById('carouselLink');
       let current = 0;
+
       function showSlide(idx) {
         slides[current].classList.remove('active');
         current = (idx + slides.length) % slides.length;
         slides[current].classList.add('active');
+
+        // Update outer carousel link
+        const newHref = slides[current].getAttribute('data-href');
+        if (newHref) {
+          carouselLink.setAttribute('href', newHref);
+        }
       }
+
       function nextSlide() { showSlide(current + 1); }
       function prevSlide() { showSlide(current - 1); }
     </script>

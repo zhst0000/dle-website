@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../src/css/main.css">
+  <link rel="stylesheet" href="../../src/css/scorecard.css">
+
+  <title>Welcome - Puzzle Bus</title>
+  <link rel="icon" type="x-icon" href="../../assets/logo.svg">    
+  
+  <style>
+    body {
+      font-family: var(--article-font-body);
+      line-height: 1.5;
+      color: var(article-color-text);
+      background: var(article-color-body);
+    }
+    .article-container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .article-container h1 {
+      color: #333;
+    }
+    .article-container h2 {
+      color: #666;
+      font-size: 14px;
+      line-height: 0.8;
+    }
+    .article-container p {
+      line-height: 1.6;
+      color: #444;
+    }
+    .article-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .article-caption {
+      font-size: 0.8em;
+      color: var(article-color-caption);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .roadmap{
+      position: relative;
+      margin: 20px;
+      height: fit-content;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: var(--color-theme-bone-200);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    .roadmap h1 {
+      position: relative;
+      margin-left: 6px;
+      text-align: left;
+      text-decoration: none;
+      width: 400px;
+      height: 100px;
+      border-radius: 10px;
+      padding: 10px;
+      top: -6px;
+    }
+    .roadmap h2 {
+      font-size: 24px;
+      margin: 2px;
+      line-height: 1.5;
+    }
+    .roadmap h3 {
+      margin: 2px;
+      color: rgb(111, 111, 111);
+      font-weight: lighter;
+    }
+    .roadmap p {
+      margin: 2px;
+    }
+    .roadmap-logo {
+      position: relative;
+      height: 120px;
+      width: 120px;
+      top: 15px;
+    }
+    .roadmap-title {
+      display: flex;
+    }
+    .path-design {
+      --bottom-distance: 925px;
+      position: absolute;
+      background-color: var(--color-theme-red-400);
+      height: calc(100% - 224px);
+      width: 54px;
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 5px,
+        55% 5px,
+        55% var(--bottom-distance),
+        100% var(--bottom-distance),
+        100% 100%,
+        0% 100%,
+        0% var(--bottom-distance),
+        45% var(--bottom-distance),
+        45% 5px,
+        0% 5px
+      );
+      left: 50px;
+    }
+    .roadmap-item {
+      margin-left: 126px;
+      position: relative;
+      background-color: #f5f5f5;
+      width: 480px;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      margin-bottom: 20px;
+    }
+    .item-design {
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background-color: var(--color-theme-red-400);
+      border-radius: 100%;
+      left: -81.5px;
+      top: 36px;
+    }
+    .bigitem {
+      --moveleft: 60px;
+      left: var(--moveleft);
+    }
+    .bigitem h2 {
+      text-decoration: underline;
+      font-weight: bolder;
+      font-size: 30px;
+      margin: 10px;
+    }
+    .bigitem h3 {
+      margin: 10px;
+    }
+    .bigitem p {
+      margin: 10px;
+    }
+    .bigitem .item-design{
+      background-color: #f5f5f5;
+      border: 5px solid var(--color-theme-red-400);
+      left: calc(-86.5px - var(--moveleft))   /* calc(var(--moveleft) * -1)*/ ;
+    }
+  </style>
+</head>
+
+<body style="background-color: var(--color-theme-cool-200);">
+  <header>
+    <div class="header-container">
+      <div class="header-left">
+      <img src="../../assets/logo.svg" alt="Logo" class="header-logo">
+      <a href="../../index.html" class="header-title">Puzzle Bus</a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+        <li class="flairitem1"><a href="../../pages/articles.html" class="nav-btn btn-1">Reviews</a></li>
+        <li class="flairitem2"><a href="../../pages/shortlist.html" class="nav-btn btn-2">Shortlist</a></li>
+        <li class="flairitem3"><a href="../../pages/about_us.html" class="nav-btn btn-3">About</a></li>
+        <li class="flairitem4"><a href="../../pages/contact_us.html" class="nav-btn btn-4">Contact</a></li>
+        <div class="flairEnd" id="flair1"><div class="flairEndLittle"></div></div>
+        <div class="flairEnd" id="flair2"><div class="flairEndLittle"></div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- BODY -->
+    <div class="article-container">
+      <img src="welcome_banner.svg" alt="NOW ARRIVING" class="article-image">
+      <div class="caption"></div>
+
+      <h1>Launch and Welcome!</h1>
+      <h2><i>Published: 7/21/2025</i></h2>
+      <h2><i>Read Length: 2 min</i></h2>
+
+      <br>
+      <p>Welcome aboard the Puzzle Bus!</p>
+      <br>
+      <p>Today, this project is a curated list of daily games we enjoy as well as a collection of reviews for those games and others. As it stands, this project is being made by two friends who enjoy playing and talking about these games and want to grow a community based on this shared interest.</p>
+      <br> 
+      <p>In the future we intend to expand our content to include short video reviews and gameplay of new and/or interesting games, as well as additional types of written content (e.g. gameplay tips, news). Our goal is not just to maintain this site, but also get others to join the conversation here or on [other platforms]. So consider leaving a comment, [joining our subreddit], and [following our instagram].</p>
+      <br>
+      <p><strong>We hope you’ll join us for the ride,</strong></p>
+      <p><strong>Puzzle Bus Team</strong></p>
+      <br>
+    
+<!-- TIMELINE  -->        
+    <div class="roadmap">
+      <div class="roadmap-title">
+        <img class="roadmap-logo" src="../../assets/logo.svg" alt="" />
+        <h1><span style="font-size: 60px;">Roadmap</span> </h1>
+      </div>
+      <div class="path-design"></div>
+      <div class="roadmap-item" style="margin-top: 0px">
+        <div class="item-design"></div>
+        <h2>Weekly Written Reviews</h2>
+        <h3>Starting Today</h3>
+        <p>New reviews for the daily games we're playing; posted every Monday </p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>Website Improvements</h2>
+        <h3>Ongoing</h3>
+        <p>Continuous improvement of website to add new features and improve user experience </p>
+      </div>
+      <div class="roadmap-item bigitem">
+        <div class="item-design"></div>
+        <h2>Videos!</h2>
+        <h3>September 2025</h3>
+        <p>New shorts/reels style videos for our reviews; posted regularly</p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>New Written Content</h2>
+        <h3>Q3 2025</h3>
+        <p>New form of articles to expand how we interact with community</p>
+      </div>
+      <div class="roadmap-item bigitem">
+        <div class="item-design"></div>
+        <h2>Deeper Game Integration</h2>
+        <h3>Q4 2025</h3>
+        <p>Develop architecture to facilitate more ways to engage with games and with others through our website<p>
+      </div>
+      <div class="roadmap-item">
+        <div class="item-design"></div>
+        <h2>And More!</h2>
+      </div>
+      <br>
+
+    </div>
+
+  </div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-head">
+      <div class="footer-head-title">
+        <div class="footer-logo">
+          <img src="../../assets/logo.svg" alt="Puzzle Bus Logo" />
+        </div>
+        <h4>Puzzle Bus</h4>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      <div class="footer-icon">
+        <a href="#" target="_blank" rel="noopener">
+          <img src="../../pages/ContactUsPageAssets/youtubeIcon.png" alt="YouTube" />
+        </a>
+        <a href="https://www.reddit.com/r/PuzzleBus/" target="_blank" rel="noopener">
+          <img src="../../pages/ContactUsPageAssets/redditIcon.png" alt="Reddit" />
+        </a>
+        <a href="#" target="_blank" rel="noopener">
+          <img src="../../pages/ContactUsPageAssets/instagramIcon.png" alt="Instagram" />
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-column">
+      <h4>Nav</h4>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../pages/articles.html">Articles</a></li>
+        <li><a href="../../pages/shortlist.html">Shortlist</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Other</h4>
+      <ul>
+        <li><a href="../../pages/about_us.html">About</a></li>
+        <li><a href="../../pages/contact_us.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">&copy; 2025 Puzzle Bus.</div>
+</footer>
+
+<!-- SCROLL EFFECT -->
+  <svg id="scroll-node-svg" 
+      viewBox="0 0 200 1000" 
+      preserveAspectRatio="xMaxYMin slice"
+      data-line-color="var(--color-theme-red-400)" 
+      data-node-color="var(--color-theme-red-400)">
+    <path id="scroll-line-svg" d="M100,0 L100,1000" />
+    <circle class="scroll-node" cx="100" cy="150" r="12" data-pos="150"/>
+    <circle class="scroll-node" cx="100" cy="350" r="12" data-pos="350"/>
+    <circle class="scroll-node" cx="100" cy="600" r="12" data-pos="600"/>
+    <circle class="scroll-node" cx="100" cy="850" r="12" data-pos="850"/>
+  </svg>
+
+  <script src="../../src/css/scroll.js"></script>
+
+</body> 
+
+</html>
