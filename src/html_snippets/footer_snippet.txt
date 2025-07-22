@@ -7,7 +7,7 @@
           </div>
           <h4>Puzzle Bus</h4>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>A hub for discussion of daily puzzle games.</p>
 
         <div class="footer-icon">
           <a href="#" target="_blank" rel="noopener">
@@ -16,11 +16,10 @@
           <a href="https://www.reddit.com/r/PuzzleBus/" target="_blank" rel="noopener">
             <img src="./pages/ContactUsPageAssets/redditIcon.png" alt="Reddit" />
           </a>
-          <a href="#" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/puzzle_bus/" target="_blank" rel="noopener">
             <img src="./pages/ContactUsPageAssets/instagramIcon.png" alt="Instagram" />
           </a>
         </div>
-
       </div>
 
       <div class="footer-column">

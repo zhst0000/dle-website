@@ -42,6 +42,7 @@ header {
     display: flex;
     gap: 32px;
     position: relative;
+    padding-right: 20px;
   }
   .header-nav a {
     display: inline-block;
@@ -86,8 +87,7 @@ header {
 
   /* nav bar flair related */
   .flairEnd {
-    background-color: var(--color-theme-bone-200);
-    background-color: grey;
+    background-color: gray;
     width: 500px;
     height: 10px;
     border-radius: 5px;
