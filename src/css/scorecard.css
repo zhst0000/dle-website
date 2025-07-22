@@ -19,7 +19,10 @@
       font-size: 1.3em;
       font-weight: bold;
       margin-left: 40px;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
+    }
+    .info-block {
+      width: 640px;
     }
     .circle {
       width: 60px;
@@ -27,7 +30,7 @@
       border-radius: 50%;
       background: gray;
       color: white;
-      font-size: 1.5em;
+      font-size: 2em;
       font-weight: bold;
       display: flex;
       align-items: center;
@@ -38,12 +41,12 @@
       z-index: 2;
     }
     .bar-container {
-      width: 100%;
-      background: #e0e0e0;
-      height: 12px;
+      width: 640px;
+      background: darkgray;
+      height: 14px;
       border-radius: 6px;
       overflow: hidden;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       position: relative;
     }
     .bar-container + div {
@@ -59,9 +62,9 @@
     .theme .circle, .theme .bar {
       background-color: var(--color-theme-blue-400);
     }
-    .difficulty .circle, .difficulty .bar {
+    .accessibility .circle, .accessibility .bar {
       background-color: var(--color-theme-green-400);
     }
     .engineering .circle, .engineering .bar {
-      background-color: var(--color-theme-orange-400);
+      background-color: var(--color-theme-purple-400);
     }
