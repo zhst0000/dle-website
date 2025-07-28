@@ -65,6 +65,7 @@
     .accessibility .circle, .accessibility .bar {
       background-color: var(--color-theme-green-400);
     }
+
     .engineering .circle, .engineering .bar {
       background-color: var(--color-theme-purple-400);
     }
