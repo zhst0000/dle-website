@@ -138,4 +138,22 @@ header {
     background-color: var(--color-theme-purple-600);
   }
 
+
+  @media screen and (max-width: 1000px) {
+     
+    .flairEnd{
+      display: none;
+    }
+    .header-nav ul{
+      gap: 5px;
+    }    
+  }
+  
+
+  @media screen and (max-width: 900px) {
+    .header-title{
+     display: none;
+   }
+  }
+
   

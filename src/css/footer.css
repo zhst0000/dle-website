@@ -6,7 +6,7 @@ footer {
     max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 24px;
   }
   .footer-head {
@@ -92,4 +92,32 @@ footer {
   @media (max-width: 600px) {
     footer { padding: 24px 16px; }
     .footer-about { margin-right: 0; }
+  }
+
+
+  @media (max-width: 718px) {
+   .footer-column h4{
+    margin-left: 0;
+    width: fit-content;
+   }
+
+   .footer-column li{
+    margin-left: 0;
+    width: fit-content;
+   }
+
+   .footer-column ul{
+    margin-left: 0;
+    width: fit-content;
+   }
+
+   .footer-column {
+   
+    width: fit-content;
+   }
+
+
+
+
+
   }
